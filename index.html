@@ -4,6 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>cuiqAnalytics - Transform Your Data Culture</title>
+    <script>
+        let currentLang = 'es';
+    </script>
     <style>
         :root {
             /* Colors */
@@ -441,8 +444,8 @@
             <img src="/images/cuiqANALYTICS.svg" alt="cuiqAnalytics" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
         </div>
         <div class="language-selector">
-            <button class="lang-button active" data-lang="en">English</button>
-            <button class="lang-button" data-lang="es">Español</button>
+            <button class="lang-button" data-lang="en">English</button>
+            <button class="lang-button active" data-lang="es">Español</button>
         </div>
     </header>
 
@@ -658,8 +661,6 @@
             }
         };
 
-        let currentLang = 'en';
-
         // Function to update page content
         function updateContent(lang) {
             currentLang = lang;
@@ -733,6 +734,10 @@
                 hero.style.transform = 'translateY(' + (scrolled * 0.5) + 'px)';
             }
         });
+
+        document.addEventListener('DOMContentLoaded',()=>{
+            updateContent(currentLang);
+        })
     </script>
 </body>
 </html>
