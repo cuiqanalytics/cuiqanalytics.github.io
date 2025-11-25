@@ -3,696 +3,312 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>cuiqAnalytics - Transform Your Data Culture</title>
-    <script>
-        let currentLang = 'es';
-    </script>
-    <style>
-        :root {
-            /* Colors */
-            --color-primary: #2d7a3e;
-            --color-primary-dark: #245f31;
-            --color-primary-light: #4a9d5f;
-            --color-bg-light: #f8f9fa;
-            --color-bg-gradient-light: #f0f7f2;
-            --color-bg-gradient-lighter: #e6f3ea;
-            --color-text: #333;
-            --color-text-light: #1a1a1a;
-            --color-white: white;
-            --color-border: #e0e0e0;
-            --color-border-green: #c3e6cb;
-            --color-success-bg: #d4edda;
-            --color-success-text: #155724;
-            
-            /* Typography */
-            --font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Helvetica', Arial, sans-serif;
-            --font-size-base: 1rem;
-            --font-size-small: 0.9rem;
-            --font-size-medium: 1.1rem;
-            --font-size-large: 1.3rem;
-            --font-size-xl: 1.5rem;
-            --font-size-2xl: 2rem;
-            --font-size-3xl: 2.5rem;
-            --font-size-4xl: 3.5rem;
-            --line-height-base: 1.6;
-            --line-height-tight: 1.2;
-            
-            /* Spacing */
-            --spacing-xs: 0.5rem;
-            --spacing-sm: 1rem;
-            --spacing-md: 1.5rem;
-            --spacing-lg: 2rem;
-            --spacing-xl: 2.5rem;
-            --spacing-2xl: 3rem;
-            --spacing-3xl: 5rem;
-            --spacing-4xl: 6rem;
-            
-            /* Border Radius */
-            --radius-sm: 8px;
-            --radius-md: 10px;
-            --radius-lg: 15px;
-            --radius-full: 50px;
-            --radius-circle: 50%;
-            
-            /* Shadows */
-            --shadow-sm: 0 2px 10px rgba(0,0,0,0.05);
-            --shadow-md: 0 3px 10px rgba(0,0,0,0.08);
-            --shadow-lg: 0 4px 15px rgba(0,0,0,0.2);
-            --shadow-xl: 0 6px 20px rgba(0,0,0,0.3);
-            --shadow-2xl: 0 10px 30px rgba(0,0,0,0.2);
-            
-            /* Transitions */
-            --transition-base: all 0.3s ease;
-            
-            /* Container */
-            --container-max-width: 1200px;
-            --container-padding: 5%;
-        }
-
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            font-family: var(--font-family);
-            color: var(--color-text);
-            line-height: var(--line-height-base);
-            overflow-x: hidden;
-        }
-
-        .header {
-            background: var(--color-white);
-            padding: var(--spacing-md) var(--container-padding);
-            box-shadow: var(--shadow-sm);
-            position: sticky;
-            top: 0;
-            z-index: 100;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        .logo-container {
-            max-width: 280px;
-        }
-
-        .logo-container img {
-            width: 100%;
-            height: auto;
-        }
-
-        .language-selector {
-            display: flex;
-            gap: var(--spacing-xs);
-            align-items: center;
-        }
-
-        .lang-button {
-            background: transparent;
-            border: 2px solid var(--color-primary);
-            color: var(--color-primary);
-            padding: var(--spacing-xs) var(--spacing-sm);
-            font-size: var(--font-size-small);
-            font-weight: 600;
-            border-radius: 25px;
-            cursor: pointer;
-            transition: var(--transition-base);
-        }
-
-        .lang-button:hover {
-            background: var(--color-bg-gradient-light);
-        }
-
-        .lang-button.active {
-            background: var(--color-primary);
-            color: var(--color-white);
-        }
-
-        .hero {
-            background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-primary-light) 100%);
-            color: var(--color-white);
-            padding: var(--spacing-3xl) var(--container-padding) var(--spacing-4xl);
-            position: relative;
-            overflow: hidden;
-        }
-
-        .hero::before {
-            content: '';
-            position: absolute;
-            top: -50%;
-            right: -10%;
-            width: 600px;
-            height: 600px;
-            background: rgba(255,255,255,0.05);
-            border-radius: var(--radius-circle);
-        }
-
-        .hero-content {
-            max-width: var(--container-max-width);
-            margin: 0 auto;
-            position: relative;
-            z-index: 2;
-        }
-
-        .hero h1 {
-            font-size: var(--font-size-4xl);
-            font-weight: 300;
-            margin-bottom: var(--spacing-md);
-            line-height: var(--line-height-tight);
-        }
-
-        .hero h1 strong {
-            font-weight: 700;
-        }
-
-        .motto {
-            font-size: var(--font-size-xl);
-            margin-bottom: var(--spacing-xl);
-            opacity: 0.95;
-            font-style: italic;
-        }
-
-        .cta-button {
-            background: var(--color-white);
-            color: var(--color-primary);
-            padding: 1.2rem var(--spacing-2xl);
-            font-size: var(--font-size-medium);
-            font-weight: 600;
-            border: none;
-            border-radius: var(--radius-full);
-            cursor: pointer;
-            transition: var(--transition-base);
-            box-shadow: var(--shadow-lg);
-            text-decoration: none;
-            display: inline-block;
-        }
-
-        .cta-button:hover {
-            transform: translateY(-2px);
-            box-shadow: var(--shadow-xl);
-        }
-
-        .section {
-            padding: var(--spacing-3xl) var(--container-padding);
-            max-width: var(--container-max-width);
-            margin: 0 auto;
-        }
-
-        .section-title {
-            font-size: var(--font-size-3xl);
-            color: var(--color-primary);
-            margin-bottom: var(--spacing-2xl);
-            text-align: center;
-            font-weight: 300;
-        }
-
-        .section-title strong {
-            font-weight: 700;
-        }
-
-        .problem-section {
-            background: var(--color-bg-light);
-        }
-
-        .problem-cards {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: var(--spacing-lg);
-            margin-top: var(--spacing-2xl);
-        }
-
-        .problem-card {
-            background: var(--color-white);
-            padding: var(--spacing-lg);
-            border-radius: var(--radius-md);
-            box-shadow: var(--shadow-md);
-            border-left: 4px solid var(--color-primary);
-        }
-
-        .problem-card h3 {
-            color: var(--color-primary);
-            margin-bottom: var(--spacing-sm);
-            font-size: 1.3rem;
-        }
-
-        .solution-section {
-            background: var(--color-white);
-        }
-
-        .workshop-box {
-            background: linear-gradient(135deg, var(--color-bg-gradient-light) 0%, var(--color-bg-gradient-lighter) 100%);
-            padding: var(--spacing-2xl);
-            border-radius: var(--radius-lg);
-            margin-top: var(--spacing-lg);
-            border: 2px solid var(--color-primary);
-        }
-
-        .workshop-title {
-            font-size: var(--font-size-2xl);
-            color: var(--color-primary);
-            margin-bottom: var(--spacing-md);
-            text-align: center;
-        }
-
-        .workshop-benefits {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: var(--spacing-lg);
-            margin-top: var(--spacing-lg);
-        }
-
-        .benefit-item {
-            display: flex;
-            align-items: start;
-            gap: var(--spacing-sm);
-        }
-
-        .benefit-icon {
-            width: 40px;
-            height: 40px;
-            background: var(--color-primary);
-            border-radius: var(--radius-circle);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: var(--color-white);
-            font-weight: bold;
-            flex-shrink: 0;
-        }
-
-        .approach-section {
-            background: #f8f9fa;
-        }
-
-        .approach-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 2.5rem;
-            margin-top: 3rem;
-        }
-
-        .approach-item {
-            text-align: center;
-        }
-
-        .approach-number {
-            width: 60px;
-            height: 60px;
-            background: #2d7a3e;
-            color: white;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 1.5rem;
-            font-weight: bold;
-            margin: 0 auto 1.5rem;
-        }
-
-        .approach-item h3 {
-            color: #2d7a3e;
-            margin-bottom: 1rem;
-            font-size: 1.4rem;
-        }
-
-        .cta-section {
-            background: linear-gradient(135deg, #2d7a3e 0%, #4a9d5f 100%);
-            color: white;
-            text-align: center;
-            padding: 5rem 5%;
-        }
-
-        .cta-section h2 {
-            font-size: 2.5rem;
-            margin-bottom: 1.5rem;
-            font-weight: 300;
-        }
-
-        .cta-section p {
-            font-size: 1.3rem;
-            margin-bottom: 2.5rem;
-            opacity: 0.95;
-        }
-
-        .contact-form {
-            max-width: 600px;
-            margin: 0 auto;
-            background: white;
-            padding: 2.5rem;
-            border-radius: 15px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
-        }
-
-        .form-group {
-            margin-bottom: 1.5rem;
-            text-align: left;
-        }
-
-        .form-group label {
-            display: block;
-            color: #333;
-            font-weight: 600;
-            margin-bottom: 0.5rem;
-        }
-
-        .form-group input,
-        .form-group textarea {
-            width: 100%;
-            padding: 0.8rem;
-            border: 2px solid #e0e0e0;
-            border-radius: 8px;
-            font-size: 1rem;
-            transition: border-color 0.3s ease;
-        }
-
-        .form-group input:focus,
-        .form-group textarea:focus {
-            outline: none;
-            border-color: #2d7a3e;
-        }
-
-        .form-group textarea {
-            resize: vertical;
-            min-height: 120px;
-        }
-
-        .submit-button {
-            background: #2d7a3e;
-            color: white;
-            padding: 1rem 3rem;
-            font-size: 1.1rem;
-            font-weight: 600;
-            border: none;
-            border-radius: 50px;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            width: 100%;
-        }
-
-        .submit-button:hover {
-            background: #245f31;
-        }
-
-        .footer {
-            background: #1a1a1a;
-            color: white;
-            text-align: center;
-            padding: 2rem 5%;
-        }
-
-        .success-message {
-            display: none;
-            background: #d4edda;
-            color: #155724;
-            padding: 1rem;
-            border-radius: 8px;
-            margin-bottom: 1rem;
-            border: 1px solid #c3e6cb;
-        }
-
-        @media (max-width: 768px) {
-            .header {
-                flex-direction: column;
-                gap: 1rem;
-            }
-
-            .hero h1 {
-                font-size: 2.5rem;
-            }
-
-            .motto {
-                font-size: 1.2rem;
-            }
-
-            .section-title {
-                font-size: 2rem;
-            }
-
-            .approach-grid,
-            .problem-cards,
-            .workshop-benefits {
-                grid-template-columns: 1fr;
-            }
-        }
-    </style>
+    <title>cuiqAnalytics - Local-First Analytics. Lightning Fast. Zero Cloud Dependency.</title>
+    <link rel="stylesheet" href="/static/styles.css">
 </head>
 <body>
-    <header class="header">
-        <div class="logo-container">
-            <img src="/images/cuiqANALYTICS.svg" alt="cuiqAnalytics" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+    <!-- Navigation -->
+    <nav>
+        <div class="header">
+            <img src="/static/cuiqANALYTICS.svg" height="32" alt="cuiqAnalytics Logo">
+            <div class="nav-links">
+                <a href="#why">Why</a>
+                <a href="#products">Products</a>
+                <a href="#vision">Vision</a>
+                <a href="#about">About Us</a>
+            </div>
         </div>
-        <div class="language-selector">
-            <button class="lang-button" data-lang="en">English</button>
-            <button class="lang-button active" data-lang="es">Español</button>
-        </div>
-    </header>
+    </nav>
 
+    <!-- Hero Section -->
     <section class="hero">
-        <div class="hero-content">
-            <h1 data-i18n="hero-title">Transform Your Organization's <strong>Data Culture</strong></h1>
-            <p class="motto" data-i18n="motto">"You can always do better with data"</p>
-            <a href="#contact" class="cta-button" data-i18n="hero-cta">Start Your Transformation</a>
-        </div>
-    </section>
-
-    <section class="section problem-section">
-        <h2 class="section-title" data-i18n="challenge-title">The <strong>Challenge</strong></h2>
-        <div class="problem-cards">
-            <div class="problem-card">
-                <h3 data-i18n="problem1-title">Disconnected Teams</h3>
-                <p data-i18n="problem1-desc">Data insights remain siloed. Decisions happen in isolation without leveraging your organization's full analytical power.</p>
-            </div>
-            <div class="problem-card">
-                <h3 data-i18n="problem2-title">Low Data Literacy</h3>
-                <p data-i18n="problem2-desc">Teams struggle to interpret data correctly, leading to misguided strategies and missed opportunities.</p>
-            </div>
-            <div class="problem-card">
-                <h3 data-i18n="problem3-title">Culture Gap</h3>
-                <p data-i18n="problem3-desc">Despite investing in tools and talent, your organization hasn't made the cultural shift to truly become data-driven.</p>
+        <div class="container">
+            <div class="hero-content fade-in">
+                <h1>Local-First Analytics.<br>Lightning Fast.<br>Zero Cloud Dependency.</h1>
+                <p>A modern, AI-powered analytics stack that runs on your laptop or on-prem—without servers, cloud lock-in, or complex infrastructure.</p>
+                <div class="cta-group">
+                    <a href="#download" class="btn btn-primary">Download Preview</a>
+                    <a href="#waitlist" class="btn btn-secondary">Join the Waitlist</a>
+                </div>
             </div>
         </div>
     </section>
 
-    <section class="section solution-section">
-        <h2 class="section-title" data-i18n="solution-title">Our <strong>Solution</strong></h2>
-        <div class="workshop-box">
-            <h3 class="workshop-title" data-i18n="workshop-title">Data-Driven Culture Workshop</h3>
-            <p style="text-align: center; font-size: 1.1rem; margin-bottom: 2rem;" data-i18n="workshop-desc">An intensive on-site program that elevates your organization's data maturity from the ground up.</p>
-            
-            <div class="workshop-benefits">
+    <!-- Why Section -->
+    <section class="why-section" id="why">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">The Problem</span>
+                <h2>Analytics shouldn't depend on fragile, expensive cloud pipelines.</h2>
+            </div>
+
+            <div class="problem-grid">
+                <div class="problem-card">
+                    <h3>⏱️ Slow Workflows</h3>
+                    <p>Cloud-dependent processes create bottlenecks and slow iteration cycles</p>
+                </div>
+                <div class="problem-card">
+                    <h3>💸 High Costs</h3>
+                    <p>Infrastructure and egress costs eat into budgets with unpredictable scaling</p>
+                </div>
+                <div class="problem-card">
+                    <h3>🔧 Fragile Pipelines</h3>
+                    <p>Complex orchestration systems break easily and require constant maintenance</p>
+                </div>
+                <div class="problem-card">
+                    <h3>🔄 Long Cycles</h3>
+                    <p>Waiting on deployments and infrastructure slows down insights</p>
+                </div>
+                <div class="problem-card">
+                    <h3>🔒 Vendor Lock-in</h3>
+                    <p>Cloud platforms trap teams in expensive, inflexible ecosystems</p>
+                </div>
+                <div class="problem-card">
+                    <h3>🛡️ Data Sovereignty</h3>
+                    <p>Regulatory and security risks when data leaves your environment</p>
+                </div>
+            </div>
+
+            <div class="callout">
+                <p><strong>The result?</strong> Teams spend more time maintaining systems than generating insights.</p>
+                <p style="margin-top: 16px;"><strong>We fix that</strong> by bringing analytics back to where it belongs: local, fast, and under your control.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Solution Section -->
+    <section class="solution-section">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">The Solution</span>
+                <h2>The Local-First, AI-Enhanced Analytics Stack</h2>
+                <p class="section-subtitle">cuiqAnalytics delivers a suite of blazing-fast tools that run 100% locally or on-prem, giving teams complete autonomy with minimal overhead.</p>
+            </div>
+
+            <div class="benefits-grid">
                 <div class="benefit-item">
-                    <div class="benefit-icon">✓</div>
-                    <div>
-                        <h4 style="color: #2d7a3e; margin-bottom: 0.5rem;" data-i18n="benefit1-title">Strategic Awareness</h4>
-                        <p data-i18n="benefit1-desc">Understand how data drives competitive advantage and business outcomes</p>
+                    <div class="benefit-icon">⚡</div>
+                    <h3>10–100× Faster</h3>
+                    <p>Iteration cycles that keep pace with your thinking</p>
+                </div>
+                <div class="benefit-item">
+                    <div class="benefit-icon">☁️</div>
+                    <h3>Zero Cloud Dependency</h3>
+                    <p>Run everything on your terms, your infrastructure</p>
+                </div>
+                <div class="benefit-item">
+                    <div class="benefit-icon">🔐</div>
+                    <h3>Full Data Control</h3>
+                    <p>Complete sovereignty and security for your data</p>
+                </div>
+                <div class="benefit-item">
+                    <div class="benefit-icon">🤖</div>
+                    <h3>AI-Assisted Automation</h3>
+                    <p>Intelligence across the entire analytics pipeline</p>
+                </div>
+                <div class="benefit-item">
+                    <div class="benefit-icon">📦</div>
+                    <h3>Lightweight & Modular</h3>
+                    <p>Use what you need, nothing more</p>
+                </div>
+            </div>
+
+            <div class="callout" style="text-align: center; margin-top: 60px;">
+                <p style="font-size: 24px;">Simplicity is power. Local-first is freedom.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Products Section -->
+    <section class="products-section" id="products">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">Product Suite</span>
+                <h2>Built for Speed, Control, and Autonomy</h2>
+            </div>
+
+            <div class="product-grid">
+                <div class="product-card">
+                    <div class="product-header">
+                        <h3>cuiqMetrics</h3>
+                        <p class="product-description">AI-assisted metrics governance with versioning, lineage, and consensus-driven definitions. Define once. Reuse everywhere. No semantic servers required.</p>
+                    </div>
+                    <div class="product-details">
+                        <div class="detail-column">
+                            <h4>Use Cases</h4>
+                            <ul>
+                                <li>Governed metrics layer</li>
+                                <li>BI consistency</li>
+                                <li>Audit and compliance</li>
+                            </ul>
+                        </div>
+                        <div class="detail-column">
+                            <h4>Benefits</h4>
+                            <ul>
+                                <li>No infrastructure</li>
+                                <li>Predictable definitions</li>
+                                <li>Automatic lineage tracking</li>
+                            </ul>
+                        </div>
                     </div>
                 </div>
-                <div class="benefit-item">
-                    <div class="benefit-icon">✓</div>
-                    <div>
-                        <h4 style="color: #2d7a3e; margin-bottom: 0.5rem;" data-i18n="benefit2-title">Practical Literacy</h4>
-                        <p data-i18n="benefit2-desc">Learn to read, interpret, and communicate with data effectively</p>
+
+                <div class="product-card">
+                    <div class="product-header">
+                        <h3>cuiqData</h3>
+                        <p class="product-description">Zero-server orchestration and transformation engine. Pipelines that run anywhere—locally, on-prem, or in containers.</p>
+                    </div>
+                    <div class="product-details">
+                        <div class="detail-column">
+                            <h4>Use Cases</h4>
+                            <ul>
+                                <li>ELT/ETL</li>
+                                <li>Data transformations</li>
+                                <li>Local-first workflows</li>
+                            </ul>
+                        </div>
+                        <div class="detail-column">
+                            <h4>Benefits</h4>
+                            <ul>
+                                <li>No Airflow, no Kubernetes</li>
+                                <li>Instant iteration</li>
+                                <li>AI-assisted pipeline generation</li>
+                            </ul>
+                        </div>
                     </div>
                 </div>
-                <div class="benefit-item">
-                    <div class="benefit-icon">✓</div>
-                    <div>
-                        <h4 style="color: #2d7a3e; margin-bottom: 0.5rem;" data-i18n="benefit3-title">Cultural Transformation</h4>
-                        <p data-i18n="benefit3-desc">Build sustainable practices that embed data-thinking into daily operations</p>
+
+                <div class="product-card">
+                    <div class="product-header">
+                        <h3>cuiqLearn</h3>
+                        <p class="product-description">A self-contained analytics academy platform that works offline. Perfect for onboarding, corporate training, and upskilling.</p>
+                    </div>
+                    <div class="product-details">
+                        <div class="detail-column">
+                            <h4>Use Cases</h4>
+                            <ul>
+                                <li>Internal training</li>
+                                <li>Bootcamps</li>
+                                <li>Enterprise learning</li>
+                            </ul>
+                        </div>
+                        <div class="detail-column">
+                            <h4>Benefits</h4>
+                            <ul>
+                                <li>Works without internet</li>
+                                <li>Portable and lightweight</li>
+                                <li>AI-assisted content creation</li>
+                            </ul>
+                        </div>
                     </div>
                 </div>
-                <div class="benefit-item">
-                    <div class="benefit-icon">✓</div>
-                    <div>
-                        <h4 style="color: #2d7a3e; margin-bottom: 0.5rem;" data-i18n="benefit4-title">Actionable Frameworks</h4>
-                        <p data-i18n="benefit4-desc">Walk away with tools and methodologies you can implement immediately</p>
+
+                <div class="product-card">
+                    <div class="product-header">
+                        <h3>cuiqGen</h3>
+                        <p class="product-description">Ultra-fast synthetic data generator for analytics, demos, training, and testing—cloud-free.</p>
+                    </div>
+                    <div class="product-details">
+                        <div class="detail-column">
+                            <h4>Use Cases</h4>
+                            <ul>
+                                <li>Data privacy-safe testing</li>
+                                <li>Demo datasets</li>
+                                <li>Prototypes</li>
+                            </ul>
+                        </div>
+                        <div class="detail-column">
+                            <h4>Benefits</h4>
+                            <ul>
+                                <li>Zero dependency on APIs</li>
+                                <li>Instant dataset creation</li>
+                                <li>Safe for regulated industries</li>
+                            </ul>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <section class="section approach-section">
-        <h2 class="section-title" data-i18n="approach-title">How We <strong>Work</strong></h2>
-        <div class="approach-grid">
-            <div class="approach-item">
-                <div class="approach-number">1</div>
-                <h3 data-i18n="step1-title">Assess</h3>
-                <p data-i18n="step1-desc">We evaluate your current data maturity level and identify key gaps in culture, literacy, and practice.</p>
+    <!-- Stats Section -->
+    <section class="stats-section">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag" style="background: rgba(255,255,255,0.2); color: white;">Traction</span>
+                <h2 style="color: white;">Teams using cuiqAnalytics in early pilots report:</h2>
             </div>
-            <div class="approach-item">
-                <div class="approach-number">2</div>
-                <h3 data-i18n="step2-title">Design</h3>
-                <p data-i18n="step2-desc">We customize the workshop to your organization's specific challenges, industry, and goals.</p>
-            </div>
-            <div class="approach-item">
-                <div class="approach-number">3</div>
-                <h3 data-i18n="step3-title">Deliver</h3>
-                <p data-i18n="step3-desc">We run an engaging, hands-on workshop that combines theory, real-world examples, and practical exercises.</p>
-            </div>
-            <div class="approach-item">
-                <div class="approach-number">4</div>
-                <h3 data-i18n="step4-title">Sustain</h3>
-                <p data-i18n="step4-desc">We provide follow-up resources and guidance to ensure lasting cultural change beyond the workshop.</p>
+            <div class="stats-grid">
+                <div class="stat-item">
+                    <h3>40–70%</h3>
+                    <p>Faster analytics cycles</p>
+                </div>
+                <div class="stat-item">
+                    <h3>Dramatic</h3>
+                    <p>Reduction in cloud spend</p>
+                </div>
+                <div class="stat-item">
+                    <h3>Improved</h3>
+                    <p>Governance and autonomy</p>
+                </div>
             </div>
         </div>
     </section>
 
-    <section class="cta-section" id="contact">
-        <h2 data-i18n="cta-title">Ready to Elevate Your Data Culture?</h2>
-        <p data-i18n="cta-subtitle">Let's discuss how we can transform your organization</p>
-        
-        <div class="contact-form">
-            <div class="success-message" id="successMessage" data-i18n="success-message">
-                Thank you! We'll be in touch soon to discuss your data transformation journey.
+    <!-- Vision Section -->
+    <section id="vision">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">Vision</span>
+                <h2>Empowering every organization to run world-class analytics</h2>
+                <p class="section-subtitle">Fast, local, and fully under their control.</p>
             </div>
-            <form id="contactForm">
-                <div class="form-group">
-                    <label for="name" data-i18n="form-name">Name *</label>
-                    <input type="text" id="name" name="name" required>
-                </div>
-                <div class="form-group">
-                    <label for="email" data-i18n="form-email">Email *</label>
-                    <input type="email" id="email" name="email" required>
-                </div>
-                <div class="form-group">
-                    <label for="company" data-i18n="form-company">Company *</label>
-                    <input type="text" id="company" name="company" required>
-                </div>
-                <div class="form-group">
-                    <label for="message" data-i18n="form-message">Tell us about your data challenges</label>
-                    <textarea id="message" name="message"></textarea>
-                </div>
-                <button type="submit" class="submit-button" data-i18n="form-submit">Request Workshop Information</button>
-            </form>
+
+            <div class="callout" style="text-align: center;">
+                <p>We believe analytics should be accessible, affordable, and autonomous. No team should be held back by infrastructure complexity or cloud dependency.</p>
+            </div>
         </div>
     </section>
 
-    <footer class="footer">
-        <p data-i18n="footer">&copy; 2025 cuiqAnalytics. All rights reserved.</p>
+    <!-- CTA Section -->
+    <section class="cta-section" id="download">
+        <div class="container">
+            <h2>Ready to experience local-first analytics?</h2>
+            <div class="cta-group">
+                <a href="#" class="btn btn-primary">Download Preview</a>
+                <a href="#" class="btn btn-secondary" id="waitlist">Join the Waitlist</a>
+            </div>
+            <div class="links">
+                <a href="#">Read the Documentation</a>
+                <a href="#">View on GitHub</a>
+                <a href="#">Contact Sales</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <img src="static/cuiqANALYTICS.svg" height="24" alt="cuiqAnalytics Logo">
+                </div>
+                <div class="footer-links">
+                    <a href="#">Contact</a>
+                    <a href="#">Docs</a>
+                    <a href="#">GitHub</a>
+                    <a href="#">Privacy</a>
+                    <a href="#">Terms</a>
+                </div>
+            </div>
+            <div class="copyright">
+                © 2025 cuiqAnalytics • Local-First Data Intelligence
+            </div>
+        </div>
     </footer>
 
     <script>
-        // Translation object
-        const translations = {
-            en: {
-                "hero-title": "Transform Your Organization's <strong>Data Culture</strong>",
-                "motto": '"You can always do better with data"',
-                "hero-cta": "Start Your Transformation",
-                "challenge-title": "The <strong>Challenge</strong>",
-                "problem1-title": "Disconnected Teams",
-                "problem1-desc": "Data insights remain siloed. Decisions happen in isolation without leveraging your organization's full analytical power.",
-                "problem2-title": "Low Data Literacy",
-                "problem2-desc": "Teams struggle to interpret data correctly, leading to misguided strategies and missed opportunities.",
-                "problem3-title": "Culture Gap",
-                "problem3-desc": "Despite investing in tools and talent, your organization hasn't made the cultural shift to truly become data-driven.",
-                "solution-title": "Our <strong>Solution</strong>",
-                "workshop-title": "Data-Driven Culture Workshop",
-                "workshop-desc": "An intensive on-site program that elevates your organization's data maturity from the ground up.",
-                "benefit1-title": "Strategic Awareness",
-                "benefit1-desc": "Understand how data drives competitive advantage and business outcomes",
-                "benefit2-title": "Practical Literacy",
-                "benefit2-desc": "Learn to read, interpret, and communicate with data effectively",
-                "benefit3-title": "Cultural Transformation",
-                "benefit3-desc": "Build sustainable practices that embed data-thinking into daily operations",
-                "benefit4-title": "Actionable Frameworks",
-                "benefit4-desc": "Walk away with tools and methodologies you can implement immediately",
-                "approach-title": "How We <strong>Work</strong>",
-                "step1-title": "Assess",
-                "step1-desc": "We evaluate your current data maturity level and identify key gaps in culture, literacy, and practice.",
-                "step2-title": "Design",
-                "step2-desc": "We customize the workshop to your organization's specific challenges, industry, and goals.",
-                "step3-title": "Deliver",
-                "step3-desc": "We run an engaging, hands-on workshop that combines theory, real-world examples, and practical exercises.",
-                "step4-title": "Sustain",
-                "step4-desc": "We provide follow-up resources and guidance to ensure lasting cultural change beyond the workshop.",
-                "cta-title": "Ready to Elevate Your Data Culture?",
-                "cta-subtitle": "Let's discuss how we can transform your organization",
-                "success-message": "Thank you! We'll be in touch soon to discuss your data transformation journey.",
-                "form-name": "Name *",
-                "form-email": "Email *",
-                "form-company": "Company *",
-                "form-message": "Tell us about your data challenges",
-                "form-submit": "Request Workshop Information",
-                "footer": "&copy; 2025 cuiqAnalytics. All rights reserved."
-            },
-            es: {
-                "hero-title": "Transforma la <strong>Cultura de Datos</strong> de Tu Organización",
-                "motto": '"Siempre puedes mejorar con datos"',
-                "hero-cta": "Inicia Tu Transformación",
-                "challenge-title": "El <strong>Desafío</strong>",
-                "problem1-title": "Equipos Desconectados",
-                "problem1-desc": "Los insights de datos permanecen aislados. Las decisiones ocurren en silos sin aprovechar todo el poder analítico de tu organización.",
-                "problem2-title": "Baja Alfabetización de Datos",
-                "problem2-desc": "Los equipos luchan por interpretar datos correctamente, llevando a estrategias equivocadas y oportunidades perdidas.",
-                "problem3-title": "Brecha Cultural",
-                "problem3-desc": "A pesar de invertir en herramientas y talento, tu organización no ha logrado el cambio cultural para ser verdaderamente data-driven.",
-                "solution-title": "Nuestra <strong>Solución</strong>",
-                "workshop-title": "Taller de Cultura Data-Driven",
-                "workshop-desc": "Un programa intensivo presencial que eleva la madurez de datos de tu organización desde la base.",
-                "benefit1-title": "Conciencia Estratégica",
-                "benefit1-desc": "Comprende cómo los datos impulsan ventaja competitiva y resultados de negocio",
-                "benefit2-title": "Alfabetización Práctica",
-                "benefit2-desc": "Aprende a leer, interpretar y comunicar con datos de manera efectiva",
-                "benefit3-title": "Transformación Cultural",
-                "benefit3-desc": "Construye prácticas sostenibles que integren el pensamiento de datos en las operaciones diarias",
-                "benefit4-title": "Marcos Accionables",
-                "benefit4-desc": "Llévate herramientas y metodologías que puedes implementar inmediatamente",
-                "approach-title": "Cómo <strong>Trabajamos</strong>",
-                "step1-title": "Evaluar",
-                "step1-desc": "Evaluamos tu nivel actual de madurez de datos e identificamos brechas clave en cultura, alfabetización y práctica.",
-                "step2-title": "Diseñar",
-                "step2-desc": "Personalizamos el taller según los desafíos específicos, industria y objetivos de tu organización.",
-                "step3-title": "Entregar",
-                "step3-desc": "Realizamos un taller dinámico y práctico que combina teoría, ejemplos del mundo real y ejercicios prácticos.",
-                "step4-title": "Sostener",
-                "step4-desc": "Proporcionamos recursos de seguimiento y orientación para asegurar un cambio cultural duradero más allá del taller.",
-                "cta-title": "¿Listo para Elevar Tu Cultura de Datos?",
-                "cta-subtitle": "Conversemos sobre cómo podemos transformar tu organización",
-                "success-message": "¡Gracias! Nos pondremos en contacto pronto para discutir tu viaje de transformación de datos.",
-                "form-name": "Nombre *",
-                "form-email": "Email *",
-                "form-company": "Empresa *",
-                "form-message": "Cuéntanos sobre tus desafíos con datos",
-                "form-submit": "Solicitar Información del Taller",
-                "footer": "&copy; 2025 cuiqAnalytics. Todos los derechos reservados."
-            }
-        };
-
-        // Function to update page content
-        function updateContent(lang) {
-            currentLang = lang;
-            document.querySelectorAll('[data-i18n]').forEach(el => {
-                const key = el.getAttribute('data-i18n');
-                if (translations[lang][key]) {
-                    el.innerHTML = translations[lang][key];
-                }
-            });
-
-            // Update language buttons
-            document.querySelectorAll('.lang-button').forEach(btn => {
-                if (btn.getAttribute('data-lang') === lang) {
-                    btn.classList.add('active');
-                } else {
-                    btn.classList.remove('active');
-                }
-            });
-
-            // Update HTML lang attribute
-            document.documentElement.lang = lang;
-        }
-
-        // Language selector event listeners
-        document.querySelectorAll('.lang-button').forEach(btn => {
-            btn.addEventListener('click', function() {
-                const lang = this.getAttribute('data-lang');
-                updateContent(lang);
-            });
-        });
-
-        // Smooth scrolling for anchor links
+        // Smooth scrolling
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
                 e.preventDefault();
@@ -706,38 +322,36 @@
             });
         });
 
-        // Form submission handler
-        document.getElementById('contactForm').addEventListener('submit', function(e) {
-            e.preventDefault();
-            
-            // Show success message
-            const successMsg = document.getElementById('successMessage');
-            successMsg.style.display = 'block';
-            
-            // Reset form
-            this.reset();
-            
-            // Scroll to success message
-            successMsg.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
-            
-            // Hide success message after 5 seconds
-            setTimeout(() => {
-                successMsg.style.display = 'none';
-            }, 5000);
+        // Intersection Observer for fade-in animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -100px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.animation = 'fadeInUp 0.8s ease-out forwards';
+                }
+            });
+        }, observerOptions);
+
+        // Observe all cards and sections
+        document.querySelectorAll('.product-card, .problem-card, .benefit-item').forEach(el => {
+            observer.observe(el);
         });
 
-        // Add subtle parallax effect to hero
-        window.addEventListener('scroll', function() {
-            const hero = document.querySelector('.hero');
-            const scrolled = window.pageYOffset;
-            if (hero && scrolled < hero.offsetHeight) {
-                hero.style.transform = 'translateY(' + (scrolled * 0.5) + 'px)';
+        // Navbar background on scroll
+        const nav = document.querySelector('nav');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 50) {
+                nav.style.background = 'rgba(255, 255, 255, 0.98)';
+                nav.style.boxShadow = '0 4px 20px rgba(0, 0, 0, 0.08)';
+            } else {
+                nav.style.background = 'rgba(255, 255, 255, 0.95)';
+                nav.style.boxShadow = '0 2px 12px rgba(0, 0, 0, 0.05)';
             }
         });
-
-        document.addEventListener('DOMContentLoaded',()=>{
-            updateContent(currentLang);
-        })
     </script>
 </body>
 </html>
