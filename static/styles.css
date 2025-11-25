@@ -83,6 +83,8 @@ nav .container {
     position: relative;
     padding-top: 80px;
     overflow: hidden;
+    background-image: radial-gradient(125% 125% at 50% 90%, #ffffff 40%, #338000 100%);
+    background-size: "100% 100%",
 }
 
 .hero::before {
