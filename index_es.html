@@ -1,0 +1,735 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>cuiqAnalytics - Análisis Local. Super Rápido. Sin depender de la nube.</title>
+    <link rel="stylesheet" href="/static/styles.css">
+</head>
+
+<body>
+    <!-- Navigation -->
+    <nav>
+        <div class="header">
+            <img src="/static/cuiqANALYTICS.svg" height="32" alt="Logo cuiqAnalytics">
+            <div class="nav-links">
+                <a href="#why">El Problema</a>
+                <a href="#products">Productos</a>
+                <a href="#vision">Visión</a>
+                <a href="#about">Sobre nosotros</a>
+                <a href="#faq">FAQ</a>
+                <a href="#calculator">Ahorros</a>
+                <a href="/index.html" class="lang-link">EN</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="hero" class="hero">
+        <div class="container">
+            <div class="hero-content fade-in">
+                <h1>Orquesta Datos<br>Sin Complejidad de Nube</h1>
+                <p>Corre tu pipeline de datos completo local o en tu infraestructura. Sin Airflow. Sin Kubernetes. Sin atraparte en un proveedor. Solo SQL, velocidad y control total.</p>
+                <p style="color: red">Nota: este sitio aún se encuentra en desarrollo.</p>
+                <div class="cta-group">
+                    <a href="#download" class="btn btn-primary">Descargar Preview</a>
+                    <a href="#waitlist" class="btn btn-secondary">Unirse a la lista de espera</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Section -->
+    <section class="why-section" id="why">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">El problema</span>
+                <h2>El análisis no debería depender procesos en la nube frágiles y caros.</h2>
+            </div>
+
+            <div class="problem-grid">
+                <div class="problem-card">
+                    <h3>⏱️ Flujos de trabajo lentos</h3>
+                    <p>Los procesos que dependen de la nube crean cuellos de botella y ciclos de iteración lentos</p>
+                </div>
+                <div class="problem-card">
+                    <h3>💸 Costos altísimos</h3>
+                    <p>Los costos de infraestructura y tráfico de datos se comen el presupuesto de manera impredecible</p>
+                </div>
+                <div class="problem-card">
+                    <h3>🔧 Orquestación frágil</h3>
+                    <p>Los sistemas de orquestación complejos se quiebran fácil y necesitan mantenimiento constante</p>
+                </div>
+                <div class="problem-card">
+                    <h3>🔄 Ciclos largos</h3>
+                    <p>Esperar por despliegues e infraestructura frena los insights que necesitas</p>
+                </div>
+                <div class="problem-card">
+                    <h3>🔒 Dependencia de proveedores</h3>
+                    <p>Las plataformas en la nube te atrapan en ecosistemas caros e inflexibles</p>
+                </div>
+                <div class="problem-card">
+                    <h3>🛡️ Soberanía de datos</h3>
+                    <p>Riesgos regulatorios y de seguridad cuando tus datos se van de tu ambiente</p>
+                </div>
+            </div>
+
+            <div class="callout">
+                <p><strong>¿El resultado?</strong> Los equipos gastan más tiempo manteniendo sistemas que generando insights reales.</p>
+                <p style="margin-top: 16px;"><strong>Nosotros lo arreglamos</strong> trayendo el análisis de vuelta a donde corresponde: local, rápido, y bajo tu control.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Solution Section -->
+    <section class="solution-section">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">La solución</span>
+                <h2>Orquesta datos sin la complejidad de la nube</h2>
+                <p class="section-subtitle"><strong>cuiqAnalytics</strong> te da orquestación y gobernanza de datos completa—100% local o en tu infraestructura. Sin servidores. Sin atraparte en un proveedor. Sin overhead de infraestructura.</p>
+            </div>
+
+            <div class="benefits-grid">
+                <div class="benefit-item">
+                    <div class="benefit-icon">⚡</div>
+                    <h3>10–100× más rápido</h3>
+                    <p>Ciclos de iteración que avanzan al ritmo de tu pensamiento</p>
+                </div>
+                <div class="benefit-item">
+                    <div class="benefit-icon">☁️</div>
+                    <h3>Sin depender de la nube</h3>
+                    <p>Corre todo en tu infraestructura, tus términos</p>
+                </div>
+                <div class="benefit-item">
+                    <div class="benefit-icon">🔐</div>
+                    <h3>Control total de datos</h3>
+                    <p>Soberanía y seguridad completa para tus datos</p>
+                </div>
+                <div class="benefit-item">
+                    <div class="benefit-icon">🤖</div>
+                    <h3>Automatización asistida por IA</h3>
+                    <p>Inteligencia en toda el proceso de análisis</p>
+                </div>
+                <div class="benefit-item">
+                    <div class="benefit-icon">📦</div>
+                    <h3>Ligero y modular</h3>
+                    <p>Usa lo que necesitas, nada más</p>
+                </div>
+            </div>
+
+            <div class="callout" style="text-align: center; margin-top: 60px;">
+                <p style="font-size: 24px;">La simplicidad es poder. Local-first es libertad.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Products Section -->
+    <section class="products-section" id="products">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">Productos Core</span>
+                <h2>Orquestación & Gobernanza de Datos, Hecho Bien</h2>
+                <p class="section-subtitle">Dos herramientas poderosas que funcionan juntas o separadas. Desde pipelines simples hasta métricas gobernadas—todo se queda local.</p>
+            </div>
+
+            <div class="product-grid">
+
+                <!-- cuiqData -->
+                <div class="product-card">
+                    <div class="product-header">
+                        <h3>cuiqData</h3>
+                        <span style="font-size: 13px; color: #666; font-weight: normal; display: block; margin-top: 4px;">Producto Principal</span>
+                        <p class="product-description">Motor de orquestación y transformación sin servidor. Define pipelines en SQL, corre en cualquier lado—tu laptop, infraestructura local, o contenedores. Incluye generación de datos sintéticos integrada para testing.</p>
+                    </div>
+                    <div class="product-details">
+                        <div class="detail-column">
+                            <h4>Ideal Para</h4>
+                            <ul>
+                                <li>Flujos ELT/ETL</li>
+                                <li>Transformaciones de datos</li>
+                                <li>Analítica local-first</li>
+                                <li>Generación de datos de prueba</li>
+                            </ul>
+                        </div>
+                        <div class="detail-column">
+                            <h4>Por Qué cuiqData</h4>
+                            <ul>
+                                <li>Sin Airflow. Sin Kubernetes</li>
+                                <li>Corre pipelines en tu laptop</li>
+                                <li>Reproducibilidad & trazabilidad completa</li>
+                                <li>Escala a producción al instante</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>                
+
+                <!-- cuiqMetrics -->
+                <div class="product-card">
+                    <div class="product-header">
+                        <h3>cuiqMetrics</h3>
+                        <span style="font-size: 13px; color: #666; font-weight: normal; display: block; margin-top: 4px;">Mejora Opcional</span>
+                        <p class="product-description">Unifica tus métricas en todos los equipos. Consenso asistido por IA, trazabilidad completa y control de versiones—todo sin infraestructura. Define una vez. Reutiliza en todas partes.
+                        </p>
+                    </div>
+                    <div class="product-details">
+                        <div class="detail-column">
+                            <h4>Ideal Para</h4>
+                            <ul>
+                                <li>Consistencia de métricas en dashboards</li>
+                                <li>Alineación de definiciones en equipos</li>
+                                <li>Auditoría y cumplimiento regulatorio</li>
+                            </ul>
+                        </div>
+                        <div class="detail-column">
+                            <h4>Por Qué cuiqMetrics</h4>
+                            <ul>
+                                <li>Sin infraestructura de capa semántica</li>
+                                <li>Funciona junto a cuiqData</li>
+                                <li>Trazabilidad automática</li>
+                                <li>Control de versiones tipo Git</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats Section -->
+    <section class="stats-section">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag" style="background: rgba(255,255,255,0.2); color: white;">Tracción</span>
+                <h2 style="color: white;">Los equipos que usan cuiqAnalytics en pilotos tempranos reportan:</h2>
+            </div>
+            <div class="stats-grid">
+                <div class="stat-item">
+                    <h3>40–70%</h3>
+                    <p>Ciclos de análisis más rápidos</p>
+                </div>
+                <div class="stat-item">
+                    <h3>Dramática</h3>
+                    <p>Reducción en gastos de nube</p>
+                </div>
+                <div class="stat-item">
+                    <h3>Mejorada</h3>
+                    <p>Gobernanza y autonomía</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Vision Section -->
+    <section id="vision">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">Visión</span>
+                <h2>Empoderar a cada organización para ejecutar análisis de clase mundial</h2>
+                <p class="section-subtitle">Rápido, local, y completamente bajo su control.</p>
+            </div>
+
+            <div class="callout" style="text-align: center;">
+                <p>Creemos que el análisis debería ser accesible, asequible y autónomo. Ningún equipo debería ser frenado por complejidad de infraestructura o dependencia de la nube.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about-section">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">Sobre nosotros</span>
+                <h2>Construido por gente que entiende análisis</h2>
+                <p class="section-subtitle">Llevamos más de una década resolviendo problemas complejos de datos y análisis en organizaciones de todos los tamaños.</p>
+            </div>
+
+            <div class="about-grid">
+                <div class="about-card">
+                    <div class="about-icon">🎯</div>
+                    <h3>Nuestra Misión</h3>
+                    <p>Democratizar el análisis de datos de clase mundial, permitiendo que cualquier organización tenga acceso a herramientas potentes sin depender de la nube, sin complejidades innecesarias.</p>
+                </div>
+                <div class="about-card">
+                    <div class="about-icon">🔬</div>
+                    <h3>Nuestra Experiencia</h3>
+                    <p>Nuestro equipo ha construido y escalado plataformas de datos en empresas Fortune 500, startups hiper-escalables, y ha visto de primera mano los problemas que causas las soluciones basadas en la nube.</p>
+                </div>
+                <div class="about-card">
+                    <div class="about-icon">💡</div>
+                    <h3>Nuestro Enfoque</h3>
+                    <p>Empezamos escuchando. Entendemos tus desafíos. Construimos soluciones que se adapten a cómo tu equipo ya trabaja, no al revés.</p>
+                </div>
+            </div>
+
+            <div class="callout" style="margin-top: 60px;">
+                <p><strong>Somos apasionados por el análisis local-first</strong> y creemos que es el futuro de la inteligencia de datos empresarial.</p>
+                <p style="margin-top: 16px;">Si te gusta construir herramientas que empoderen a los equipos, considera <a href="#">unirte a nuestro equipo</a>.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section id="faq" class="faq-section">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">Preguntas Frecuentes</span>
+                <h2>¿Dudas? Aquí tenemos las respuestas</h2>
+            </div>
+
+            <div class="faq-container">
+                <div class="faq-item">
+                    <h3>¿Qué es cuiqAnalytics?</h3>
+                    <p>cuiqAnalytics es una suite de analítica <strong>local-first</strong> con IA. Todo corre en tu computador o en tus propios servidores, sin depender de la nube, sin servidores que mantener y sin complejidad de infraestructura.</p>
+                </div>
+
+                <div class="faq-item">
+                    <h3>¿Por qué "local-first"?</h3>
+                    <p>Porque es más rápido, más simple y más seguro. Con cuiqAnalytics: los datos nunca salen de tu entorno, los pipelines corren 10–100× más rápido, evitas costos de nube y egress, tienes control total y soberanía, y reduces la mantención casi a cero.</p>
+                </div>
+
+                <div class="faq-item">
+                    <h3>¿Cómo colaboran los equipos si todo es local?</h3>
+                    <p>A través de flujos de trabajo tipo <strong>Git</strong>: repos compartidos, control de versiones, pull requests, sincronización opcional en servidores propios, y resolución de conflictos asistida por IA. Es colaboración moderna sin depender de servicios en la nube.</p>
+                </div>
+
+                <div class="faq-item">
+                    <h3>¿Es seguro?</h3>
+                    <p>Sí, incluso más seguro que soluciones cloud. Los datos nunca se suben a ningún servicio externo, no hay APIs de terceros procesando tu información, funciona 100% detrás de tu firewall, y tienes menos superficie de ataque → menos riesgo. Local-first = seguridad por diseño.</p>
+                </div>
+
+                <div class="faq-item">
+                    <h3>¿Escala para cargas grandes?</h3>
+                    <p>Sí. Está optimizado para hardware moderno y procesamiento vectorizado. Escala mediante trabajos paralelos, contenedores, runners on-prem, e integración híbrida (procesa local, almacena donde quieras). Para BI, analítica, transformaciones, prototipos de ML y métricas, escala sin problemas.</p>
+                </div>
+
+                <div class="faq-item">
+                    <h3>¿Necesito reemplazar mi stack actual?</h3>
+                    <p>No. cuiqAnalytics se integra con lo que ya tienes: archivos, bases de datos, data lakes, warehouses. Usa formatos abiertos (SQL, Parquet, Arrow), adopción modular sin migraciones, y cero lock-in. Puedes partir con un solo módulo.</p>
+                </div>
+
+                <div class="faq-item">
+                    <h3>¿Funciona sin internet?</h3>
+                    <p>Sí. Todo funciona offline, en redes aisladas, en entornos seguros o regulados, y en servidores on-prem. Ideal para gobierno, banca, salud y empresas con políticas estrictas.</p>
+                </div>
+
+                <div class="faq-item">
+                    <h3>¿Qué productos incluye?</h3>
+                    <p><strong>cuiqData</strong> – Orquestación & transformación de datos (producto principal). Incluye generación de datos sintéticos.<br>
+                    <strong>cuiqMetrics</strong> – Gobernanza & trazabilidad de métricas (mejora opcional).<br><br>
+                    Usa cuiqData solo para pipelines, o agrega cuiqMetrics cuando necesites unificar métricas en equipos. Ambos corren 100% local.</p>
+                </div>
+
+                <div class="faq-item">
+                    <h3>¿Para qué casos es ideal?</h3>
+                    <p>Pipelines ETL/ELT, flujos de analítica, transformaciones de datos, gobernanza y métricas, prototipos de ML, y datasets sintéticos para testing. Si estás cansado de la complejidad de la nube y los proveedores que te atrapan, esto es para ti.</p>
+                </div>
+
+                <div class="faq-item">
+                    <h3>¿Para qué industrias sirve?</h3>
+                    <p>Empresas y pymes, sector público, finanzas, salud, ingeniería y operaciones, educación y capacitación, consultoras. Donde la nube es cara o lenta, cuiqAnalytics brilla.</p>
+                </div>
+
+                <div class="faq-item">
+                    <h3>¿Cómo puedo comenzar?</h3>
+                    <p>Descargar el preview, unirse a la lista de espera, seguir la guía de inicio rápido, o contactarnos para pilotos o versiones enterprise. Estamos listos para apoyar equipos pequeños, empresas y academias internas.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Cost Calculator Section -->
+    <section class="calculator-section" id="calculator">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">Ahorros Comprobados</span>
+                <h2>Calculadora de Ahorros</h2>
+                <p class="section-subtitle">Estima cuánto puede ahorrar tu organización con cuiqAnalytics</p>
+            </div>
+
+            <div class="calculator-content">
+                <div class="calculator-intro">
+                    <p>Muchos equipos de datos gastan de más en nube, pipelines, herramientas SaaS y soporte operativo. Esta calculadora te muestra cuánto puedes ahorrar al cambiar a un stack <strong>local-first con IA</strong>.</p>
+                </div>
+
+                <div class="calculator-wrapper">
+                    <!-- Step 1: Current Costs -->
+                    <div class="calculator-step">
+                        <h3>Paso 1: Tus Costos Mensuales Actuales</h3>
+                        <div class="input-group">
+                            <label>1. Cómputo en la Nube (warehouse, procesamiento, egress)</label>
+                            <div class="input-with-currency">
+                                <span>$</span>
+                                <input type="number" id="cloudCompute" placeholder="0" min="0" step="100">
+                                <span> / mes</span>
+                            </div>
+                        </div>
+
+                        <div class="input-group">
+                            <label>2. Herramientas ETL/ELT (Fivetran, Matillion, etc.)</label>
+                            <div class="input-with-currency">
+                                <span>$</span>
+                                <input type="number" id="etlTools" placeholder="0" min="0" step="100">
+                                <span> / mes</span>
+                            </div>
+                        </div>
+
+                        <div class="input-group">
+                            <label>3. Orquestación / Pipelines (Airflow, Kubernetes, etc.)</label>
+                            <div class="input-with-currency">
+                                <span>$</span>
+                                <input type="number" id="orchestration" placeholder="0" min="0" step="100">
+                                <span> / mes</span>
+                            </div>
+                        </div>
+
+                        <div class="input-group">
+                            <label>4. Capa Semántica / Gobernanza de Métricas</label>
+                            <div class="input-with-currency">
+                                <span>$</span>
+                                <input type="number" id="metrics" placeholder="0" min="0" step="100">
+                                <span> / mes</span>
+                            </div>
+                        </div>
+
+                        <div class="input-group">
+                            <label>5. Retrabajo en BI y Analítica <span class="hint">(Usualmente 20–40% del tiempo del equipo)</span></label>
+                            <div class="input-with-currency">
+                                <span>$</span>
+                                <input type="number" id="rework" placeholder="0" min="0" step="100">
+                                <span> / mes</span>
+                            </div>
+                        </div>
+
+                        <div class="input-group">
+                            <label>6. DevOps / Infraestructura / DataOps</label>
+                            <div class="input-with-currency">
+                                <span>$</span>
+                                <input type="number" id="devops" placeholder="0" min="0" step="100">
+                                <span> / mes</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Step 2: Savings Table -->
+                    <div class="calculator-step">
+                        <h3>Paso 2: Potencial de Ahorros</h3>
+                        <p class="step-description">Estimaciones conservadoras basadas en pilotos con clientes:</p>
+                        <div class="savings-table">
+                            <div class="table-row header">
+                                <div class="table-cell">Categoría</div>
+                                <div class="table-cell">Ahorro Típico</div>
+                            </div>
+                            <div class="table-row">
+                                <div class="table-cell">Cómputo en nube</div>
+                                <div class="table-cell">60–90%</div>
+                            </div>
+                            <div class="table-row">
+                                <div class="table-cell">ETL/ELT</div>
+                                <div class="table-cell">50–80%</div>
+                            </div>
+                            <div class="table-row">
+                                <div class="table-cell">Orquestación</div>
+                                <div class="table-cell">70–100%</div>
+                            </div>
+                            <div class="table-row">
+                                <div class="table-cell">Métricas/Gobernanza</div>
+                                <div class="table-cell">30–50%</div>
+                            </div>
+                            <div class="table-row">
+                                <div class="table-cell">Retrabajo BI</div>
+                                <div class="table-cell">30–50%</div>
+                            </div>
+                            <div class="table-row">
+                                <div class="table-cell">Operación/Infra</div>
+                                <div class="table-cell">50–80%</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Results Section -->
+                    <div class="calculator-results">
+                        <h3>Tu Análisis de Ahorros</h3>
+                        
+                        <div class="results-grid">
+                            <div class="result-card">
+                                <p class="result-label">Gasto Mensual Actual</p>
+                                <p class="result-value" id="totalCurrentSpend">$0</p>
+                            </div>
+
+                            <div class="result-card">
+                                <p class="result-label">Ahorro Mensual Estimado</p>
+                                <p class="result-value savings" id="estimatedMonthlySavings">$0</p>
+                            </div>
+
+                            <div class="result-card">
+                                <p class="result-label">Costo Mensual cuiqAnalytics</p>
+                                <p class="result-value" id="cuiqMonthlyCost">$0</p>
+                            </div>
+
+                            <div class="result-card highlight">
+                                <p class="result-label">Ahorro Neto Mensual</p>
+                                <p class="result-value" id="netMonthlySavings">$0</p>
+                            </div>
+
+                            <div class="result-card">
+                                <p class="result-label">Ahorro Anual Estimado</p>
+                                <p class="result-value" id="estimatedAnnualSavings">$0</p>
+                            </div>
+
+                            <div class="result-card highlight">
+                                <p class="result-label">Beneficio Anual Neto</p>
+                                <p class="result-value" id="netAnnualSavings">$0</p>
+                            </div>
+                        </div>
+
+                        <!-- Team Size Selector -->
+                        <div class="team-size-selector">
+                            <h4>Tamaño de tu Equipo de Datos</h4>
+                            <div class="team-buttons">
+                                <button class="team-btn" data-size="small">
+                                    <span class="team-label">Pequeño</span>
+                                    <span class="team-range">1–5 personas</span>
+                                    <span class="team-price">$300–$1,000/mes</span>
+                                </button>
+                                <button class="team-btn active" data-size="medium">
+                                    <span class="team-label">Mediano</span>
+                                    <span class="team-range">6–20 personas</span>
+                                    <span class="team-price">$1,000–$4,000/mes</span>
+                                </button>
+                                <button class="team-btn" data-size="large">
+                                    <span class="team-label">Grande</span>
+                                    <span class="team-range">21+ personas</span>
+                                    <span class="team-price">$4,000+/mes</span>
+                                </button>
+                            </div>
+                        </div>
+
+                        <!-- Example Scenario -->
+                        <div class="example-scenario">
+                            <h4>Ejemplo de un Equipo Mediano Típico</h4>
+                            <div class="example-grid">
+                                <div class="example-item">
+                                    <span class="example-label">Gasto Actual:</span>
+                                    <span class="example-value">~$38.500/mes</span>
+                                </div>
+                                <div class="example-item">
+                                    <span class="example-label">Ahorro Estimado:</span>
+                                    <span class="example-value">~$33.000/mes</span>
+                                </div>
+                                <div class="example-item">
+                                    <span class="example-label">Costo cuiqAnalytics:</span>
+                                    <span class="example-value">~$4.000/mes</span>
+                                </div>
+                                <div class="example-item highlight">
+                                    <span class="example-label">Ahorro Neto:</span>
+                                    <span class="example-value">~$29.000/mes</span>
+                                </div>
+                                <div class="example-item">
+                                    <span class="example-label">Beneficio Anual:</span>
+                                    <span class="example-value">~$348.000</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="calculator-cta">
+                    <p><strong>¿Quieres un análisis personalizado?</strong></p>
+                    <div class="cta-group">
+                        <a href="#" class="btn btn-primary">Agendar una Demo</a>
+                        <a href="#" class="btn btn-secondary">Hablar con Ventas</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section" id="download">
+        <div class="container">
+            <h2>¿Listo para experimentar análisis local-first?</h2>
+            <div class="cta-group">
+                <a href="#" class="btn btn-primary">Descargar Preview</a>
+                <a href="#" class="btn btn-secondary" id="waitlist">Unirse a la lista de espera</a>
+            </div>
+            <div class="links">
+                <a href="#">Leer la documentación</a>
+                <a href="#">Ver en GitHub</a>
+                <a href="#">Contactar ventas</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <img src="static/cuiqANALYTICS.svg" height="24" alt="Logo cuiqAnalytics">
+                </div>
+                <div class="footer-links">
+                    <a href="#">Contacto</a>
+                    <a href="#">Docs</a>
+                    <a href="#">GitHub</a>
+                    <a href="#">Privacidad</a>
+                    <a href="#">Términos</a>
+                </div>
+            </div>
+            <div class="copyright">
+                © 2025 cuiqAnalytics • Inteligencia de Datos Local-First
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Smooth scrolling
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Intersection Observer for fade-in animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -100px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.animation = 'fadeInUp 0.8s ease-out forwards';
+                }
+            });
+        }, observerOptions);
+
+        // Observe all cards and sections
+        document.querySelectorAll('.product-card, .problem-card, .benefit-item').forEach(el => {
+            observer.observe(el);
+        });
+
+        // Navbar background on scroll
+        const nav = document.querySelector('nav');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 50) {
+                nav.style.background = 'rgba(255, 255, 255, 0.98)';
+                nav.style.boxShadow = '0 4px 20px rgba(0, 0, 0, 0.08)';
+            } else {
+                nav.style.background = 'rgba(255, 255, 255, 0.95)';
+                nav.style.boxShadow = '0 2px 12px rgba(0, 0, 0, 0.05)';
+            }
+        });
+
+        // Cost Calculator Logic
+        const calculatorInputs = {
+            cloudCompute: document.getElementById('cloudCompute'),
+            etlTools: document.getElementById('etlTools'),
+            orchestration: document.getElementById('orchestration'),
+            metrics: document.getElementById('metrics'),
+            rework: document.getElementById('rework'),
+            devops: document.getElementById('devops')
+        };
+
+        const resultElements = {
+            totalCurrentSpend: document.getElementById('totalCurrentSpend'),
+            estimatedMonthlySavings: document.getElementById('estimatedMonthlySavings'),
+            cuiqMonthlyCost: document.getElementById('cuiqMonthlyCost'),
+            netMonthlySavings: document.getElementById('netMonthlySavings'),
+            estimatedAnnualSavings: document.getElementById('estimatedAnnualSavings'),
+            netAnnualSavings: document.getElementById('netAnnualSavings')
+        };
+
+        const teamSizeConfig = {
+            small: { min: 300, max: 1000, avg: 650 },
+            medium: { min: 1000, max: 4000, avg: 2500 },
+            large: { min: 4000, max: 15000, avg: 9500 }
+        };
+
+        let selectedTeamSize = 'medium';
+
+        // Team size buttons
+        document.querySelectorAll('.team-btn').forEach(btn => {
+            btn.addEventListener('click', function() {
+                document.querySelectorAll('.team-btn').forEach(b => b.classList.remove('active'));
+                this.classList.add('active');
+                selectedTeamSize = this.dataset.size;
+                updateCalculator();
+            });
+        });
+
+        // Calculator update function
+        function updateCalculator() {
+            // Get input values
+            const values = {
+                cloudCompute: parseFloat(calculatorInputs.cloudCompute.value) || 0,
+                etlTools: parseFloat(calculatorInputs.etlTools.value) || 0,
+                orchestration: parseFloat(calculatorInputs.orchestration.value) || 0,
+                metrics: parseFloat(calculatorInputs.metrics.value) || 0,
+                rework: parseFloat(calculatorInputs.rework.value) || 0,
+                devops: parseFloat(calculatorInputs.devops.value) || 0
+            };
+
+            // Calculate total current spend
+            const totalCurrentSpend = values.cloudCompute + values.etlTools + values.orchestration + 
+                                     values.metrics + values.rework + values.devops;
+
+            // Calculate monthly savings using conservative estimates
+            const estimatedMonthlySavings = 
+                (values.cloudCompute * 0.7) +
+                (values.etlTools * 0.6) +
+                (values.orchestration * 0.8) +
+                (values.metrics * 0.4) +
+                (values.rework * 0.4) +
+                (values.devops * 0.6);
+
+            // Get cuiqAnalytics cost
+            const teamConfig = teamSizeConfig[selectedTeamSize];
+            const cuiqMonthlyCost = teamConfig.avg;
+
+            // Calculate net savings
+            const netMonthlySavings = estimatedMonthlySavings - cuiqMonthlyCost;
+
+            // Annual calculations
+            const estimatedAnnualSavings = estimatedMonthlySavings * 12;
+            const netAnnualSavings = netMonthlySavings * 12;
+
+            // Format currency
+            const formatCurrency = (value) => {
+                return new Intl.NumberFormat('es-CL', {
+                    style: 'currency',
+                    currency: 'CLP',
+                    minimumFractionDigits: 0,
+                    maximumFractionDigits: 0
+                }).format(value);
+            };
+
+            // Update result elements
+            resultElements.totalCurrentSpend.textContent = formatCurrency(totalCurrentSpend);
+            resultElements.estimatedMonthlySavings.textContent = formatCurrency(estimatedMonthlySavings);
+            resultElements.cuiqMonthlyCost.textContent = formatCurrency(cuiqMonthlyCost);
+            resultElements.netMonthlySavings.textContent = formatCurrency(netMonthlySavings);
+            resultElements.estimatedAnnualSavings.textContent = formatCurrency(estimatedAnnualSavings);
+            resultElements.netAnnualSavings.textContent = formatCurrency(netAnnualSavings);
+        }
+
+        // Add event listeners to all inputs
+        Object.values(calculatorInputs).forEach(input => {
+            input.addEventListener('input', updateCalculator);
+            input.addEventListener('change', updateCalculator);
+        });
+
+        // Initialize calculator
+        updateCalculator();
+    </script>
+</body>
+
+</html>
