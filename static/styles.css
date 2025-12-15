@@ -50,11 +50,14 @@ nav {
     box-shadow: 0 2px 12px rgba(0, 0, 0, 0.05);
 }
 
-nav .container {
+nav .header {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px 24px;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 20px 24px;
+    position: relative;
 }
 
 .nav-links {
@@ -73,6 +76,17 @@ nav .container {
 
 .nav-links a:hover {
     color: var(--primary);
+}
+
+.lang-link {
+    margin-left: 16px;
+    padding-left: 16px;
+    border-left: 1px solid var(--border);
+    font-size: 12px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    color: var(--text-gray);
 }
 
 /* Hero Section */
@@ -934,10 +948,84 @@ footer {
     color: var(--primary-light);
 }
 
+/* Hamburger Menu */
+.hamburger {
+    display: none;
+    flex-direction: column;
+    gap: 5px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 8px;
+}
+
+.hamburger span {
+    width: 25px;
+    height: 3px;
+    background: var(--text-gray);
+    border-radius: 2px;
+    transition: all 0.3s;
+}
+
+.hamburger.active span:nth-child(1) {
+    transform: rotate(45deg) translate(8px, 8px);
+}
+
+.hamburger.active span:nth-child(2) {
+    opacity: 0;
+}
+
+.hamburger.active span:nth-child(3) {
+    transform: rotate(-45deg) translate(8px, -8px);
+}
+
 /* Responsive */
 @media (max-width: 768px) {
+    .hamburger {
+        display: flex;
+    }
+
+    nav .header {
+        padding: 16px 24px;
+    }
+
     .nav-links {
-        gap: 16px;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        flex-direction: column;
+        gap: 0;
+        background: white;
+        border-bottom: 1px solid var(--border);
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.3s ease-out;
+        padding: 0;
+        z-index: 999;
+    }
+
+    .nav-links.active {
+        max-height: 400px;
+        padding: 16px 0;
+    }
+
+    .nav-links a {
+        display: block;
+        padding: 12px 24px;
+        border-bottom: 1px solid var(--border);
+        font-size: 14px;
+    }
+
+    .nav-links a:last-child {
+        border-bottom: none;
+    }
+
+    .lang-link {
+        margin-left: 0;
+        padding-left: 24px;
+        border-left: none;
+        border-bottom: none;
     }
 
     .product-details {
