@@ -11,9 +11,16 @@
 <body>
     <!-- Navigation -->
     <nav>
-        <div class="header">
-            <img src="/static/cuiqANALYTICS.svg" height="32" alt="Logo cuiqAnalytics">
-            <div class="nav-links">
+        <div class="container">
+            <div class="header">
+                <img src="/static/cuiqANALYTICS.svg" height="32" alt="Logo cuiqAnalytics">
+                <button class="hamburger" id="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+            <div class="nav-links" id="navLinks">
                 <a href="#why">El Problema</a>
                 <a href="#products">Productos</a>
                 <a href="#vision">Visión</a>
@@ -584,6 +591,23 @@
     </footer>
 
     <script>
+        // Mobile menu toggle
+        const hamburger = document.getElementById('hamburger');
+        const navLinks = document.getElementById('navLinks');
+        
+        hamburger.addEventListener('click', () => {
+            hamburger.classList.toggle('active');
+            navLinks.classList.toggle('active');
+        });
+        
+        // Close menu when a link is clicked
+        navLinks.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => {
+                hamburger.classList.remove('active');
+                navLinks.classList.remove('active');
+            });
+        });
+
         // Smooth scrolling
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
