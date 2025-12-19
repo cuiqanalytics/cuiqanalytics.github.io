@@ -5,16 +5,16 @@
 }
 
 :root {
-    --primary: #338000;
-    --primary-dark: #265f00;
-    --primary-light: #4aa800;
+    --primary: #8f1fab;
+    --primary-dark: #612470;
+    --primary-light: #ba58d3;
     --bg-light: #ffffff;
     --bg-medium: #f8faf8;
-    --bg-accent: #f0f7ed;
-    --text-dark: #1a2e1a;
-    --text-gray: #5a6a5a;
-    --accent: #7fff00;
-    --border: #e0e8e0;
+    --bg-accent: #f0e4f3;
+    --text-dark: #2d282e;
+    --text-gray: #616161;
+    --accent: #cc00ff;
+    --border: #e8e0e6;
 }
 
 body {
@@ -97,8 +97,8 @@ nav .header {
     position: relative;
     padding-top: 180px;
     overflow: hidden;
-    /* background-image: radial-gradient(125% 125% at 50% 90%, #ffffff 40%, #338000 100%);
-    background-size: "100% 100%", */
+    background-image: radial-gradient(125% 125% at 50% 90%, #ffffff 40%, #8f1fab 100%);
+    background-size: "100% 100%",
 }
 
 .hero::before {
@@ -109,7 +109,7 @@ nav .header {
     transform: translateX(-50%);
     width: 800px;
     height: 800px;
-    background: radial-gradient(circle, rgba(51, 128, 0, 0.08) 0%, transparent 70%);
+    background: radial-gradient(circle, rgba(117, 0, 128, 0.08) 0%, transparent 70%);
     pointer-events: none;
 }
 
@@ -123,17 +123,15 @@ nav .header {
     font-weight: 800;
     line-height: 1.1;
     margin-bottom: 24px;
-    color: white;
-    /* background: linear-gradient(135deg, var(--text-dark) 0%, var(--primary) 100%);
+    background: linear-gradient(135deg, var(--text-dark) 0%, var(--primary) 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
-    background-clip: text; */
+    background-clip: text;
 }
 
 .hero p {
     font-size: clamp(18px, 2.5vw, 24px);
-    /* color: var(--text-gray); */
-    color: whitesmoke;
+    color: var(--text-gray);
     margin-bottom: 40px;
     max-width: 800px;
     line-height: 1.5;
@@ -158,15 +156,15 @@ nav .header {
 }
 
 .btn-primary {
-    background: #D46834;
+    background: var(--primary);
     color: white;
-    box-shadow: 0 4px 20px rgba(51, 128, 0, 0.3);
+    box-shadow: 0 4px 20px rgba(98, 0, 128, 0.3);
 }
 
 .btn-primary:hover {
     background: var(--primary-light);
     transform: translateY(-2px);
-    box-shadow: 0 6px 30px rgba(51, 128, 0, 0.4);
+    box-shadow: 0 6px 30px rgba(128, 0, 117, 0.4);
 }
 
 .btn-secondary {
@@ -176,7 +174,7 @@ nav .header {
 }
 
 .btn-secondary:hover {
-    background: rgba(51, 128, 0, 0.1);
+    background: rgba(124, 0, 128, 0.1);
 }
 
 /* Section Styles */
@@ -193,7 +191,7 @@ section {
 .section-tag {
     display: inline-block;
     padding: 8px 16px;
-    background: rgba(51, 128, 0, 0.1);
+    background: rgba(128, 0, 117, 0.1);
     color: var(--primary);
     border-radius: 20px;
     font-size: 14px;
@@ -242,7 +240,7 @@ h2 {
     background: var(--bg-accent);
     border-color: var(--primary);
     transform: translateY(-4px);
-    box-shadow: 0 8px 24px rgba(51, 128, 0, 0.15);
+    box-shadow: 0 8px 24px rgba(124, 0, 128, 0.15);
 }
 
 .problem-card h3 {
@@ -330,23 +328,6 @@ h2 {
     position: relative;
     overflow: hidden;
     box-shadow: 0 2px 12px rgba(0, 0, 0, 0.04);
-    display: flex;
-    gap: 40px;
-    align-items: stretch;
-}
-
-.product-content {
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-}
-
-.product-showcase {
-    flex: 1;
-    min-height: 300px;
-    background: var(--bg-medium);
-    border-radius: 8px;
-    overflow: hidden;
 }
 
 .product-card::before {
@@ -676,7 +657,7 @@ footer {
 .input-with-currency input:focus {
     outline: none;
     border-color: var(--primary);
-    box-shadow: 0 0 0 3px rgba(51, 128, 0, 0.1);
+    box-shadow: 0 0 0 3px rgba(107, 0, 128, 0.1);
 }
 
 /* Savings Table */
@@ -689,7 +670,7 @@ footer {
 
 .table-row {
     display: grid;
-    grid-template-columns: 2fr 1fr;
+    grid-template-columns: 2fr 1fr 1fr 1fr;
     border-bottom: 1px solid var(--border);
 }
 
@@ -757,7 +738,7 @@ footer {
 }
 
 .result-card.highlight {
-    background: linear-gradient(135deg, rgba(51, 128, 0, 0.1) 0%, rgba(127, 255, 0, 0.05) 100%);
+    background: linear-gradient(135deg, rgba(113, 0, 128, 0.1) 0%, rgba(225, 0, 255, 0.05) 100%);
     border-color: var(--primary);
 }
 
@@ -819,7 +800,7 @@ footer {
 
 .team-btn.active {
     border-color: var(--primary);
-    background: linear-gradient(135deg, rgba(51, 128, 0, 0.1) 0%, rgba(127, 255, 0, 0.05) 100%);
+    background: linear-gradient(135deg, rgba(107, 0, 128, 0.1) 0%, rgba(234, 0, 255, 0.05) 100%);
 }
 
 .team-label {
@@ -872,7 +853,7 @@ footer {
 }
 
 .example-item.highlight {
-    background: linear-gradient(135deg, rgba(51, 128, 0, 0.15) 0%, rgba(127, 255, 0, 0.08) 100%);
+    background: linear-gradient(135deg, rgba(124, 0, 128, 0.15) 0%, rgba(225, 0, 255, 0.08) 100%);
     border: 1px solid var(--primary);
 }
 
@@ -1075,14 +1056,5 @@ footer {
 
     .result-value {
         font-size: 20px;
-    }
-
-    .product-card {
-        flex-direction: column;
-        gap: 24px;
-    }
-
-    .product-showcase {
-        min-height: 250px;
     }
 }
