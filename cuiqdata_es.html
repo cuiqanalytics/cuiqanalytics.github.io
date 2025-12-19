@@ -1,0 +1,592 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>cuiqData - Orquestación de Datos Local-First</title>
+    <link rel="stylesheet" href="/static/styles_cuiqdata.css">
+</head>
+
+<body>
+    <!-- Navigation -->
+    <nav>
+        <div class="header">
+            <a href="/" style="display: flex; align-items: center; text-decoration: none;">
+                <img src="/static/cuiqDATA.svg" height="32" alt="Logo cuiqData">
+            </a>
+            <button class="hamburger" id="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <div class="nav-links" id="navLinks">
+                <a href="/index_es.html">← cuiqAnalytics</a>
+                <a href="#features">Características</a>
+                <a href="#usecases">Casos de Uso</a>
+                <a href="#pricing">Precios</a>
+                <a href="#faq">FAQ</a>
+                <a href="/cuiqdata/index.html" class="lang-link">EN</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="hero" class="hero">
+        <div class="container">
+            <div class="hero-content fade-in">
+                <h1>Orquesta Datos Sin Complejidad de Infraestructura</h1>
+                <p>Define pipelines como SQL. Corre en tu laptop o en producción. Sin Airflow. Sin Kubernetes. Trazabilidad completa, lineage y datos sintéticos incluidos.</p>
+                <div class="cta-group">
+                    <a href="#download" class="btn btn-primary">Descargar Preview</a>
+                    <a href="#waitlist" class="btn btn-secondary">Unirse a la Lista de Espera</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Problem Section -->
+    <section class="why-section">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">El Problema</span>
+                <h2>Los pipelines de datos te están ralentizando</h2>
+            </div>
+
+            <div class="problem-grid">
+                <div class="problem-card">
+                    <h3>🔧 Overhead de Infraestructura</h3>
+                    <p>Airflow, Kubernetes, dbt, data warehouses. Cada herramienta necesita setup, mantenimiento, monitoreo. Tu equipo gasta tiempo en DevOps, no en datos.</p>
+                </div>
+                <div class="problem-card">
+                    <h3>💰 Costos de Nube Espiral</h3>
+                    <p>Cargos de cómputo, almacenamiento, egress. Las facturas crecen con el volumen de datos, no con el valor. La infraestructura es cara e intransparente.</p>
+                </div>
+                <div class="problem-card">
+                    <h3>⏱️ Ciclos de Desarrollo Lentos</h3>
+                    <p>Probar pipelines requiere recursos en la nube. El debugging pasa en producción. La iteración es costosa y riesgosa.</p>
+                </div>
+                <div class="problem-card">
+                    <h3>🔒 Brechas en Gobernanza</h3>
+                    <p>Múltiples sistemas sin lineage único. La calidad de datos es reactiva, no proactiva. Los registros de auditoría están fragmentados.</p>
+                </div>
+                <div class="problem-card">
+                    <h3>🚀 Vendor Lock-In</h3>
+                    <p>Herramientas cloud-native te atrapan en ecosistemas. Los costos de cambio son prohibitivos. Estás comprometido, no en control.</p>
+                </div>
+                <div class="problem-card">
+                    <h3>📊 Problemas de Reproducibilidad</h3>
+                    <p>Los pipelines cambian. Los resultados varían entre entornos. El control de versiones para datos es un afterthought.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Solution Section -->
+    <section class="solution-section">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">La Solución</span>
+                <h2>cuiqData: Pipelines de Datos Simplificados</h2>
+                <p class="section-subtitle">Orquestación local-first. SQL es tu lenguaje. Corre en cualquier lugar. Cuesta menos, funciona más rápido.</p>
+            </div>
+
+            <div class="benefits-grid">
+                <div class="benefit-item">
+                    <div class="benefit-icon">⚡</div>
+                    <h3>Sin Setup de Infraestructura</h3>
+                    <p>Descarga, define SQL, corre. Funciona en tu laptop inmediatamente. Escala a producción sin cambios de código.</p>
+                </div>
+                <div class="benefit-item">
+                    <div class="benefit-icon">💻</div>
+                    <h3>Solo Interfaz SQL</h3>
+                    <p>Sin scripts Python, sin configs YAML. Si escribes SQL, construyes pipelines. Barrera de entrada menor. Velocidad mayor.</p>
+                </div>
+                <div class="benefit-item">
+                    <div class="benefit-icon">🔍</div>
+                    <h3>Lineage y Reproducibilidad Completa</h3>
+                    <p>Cada transformación rastreada. Inputs, outputs, dependencias. Control de versiones tipo Git. Debugea y audita con confianza.</p>
+                </div>
+                <div class="benefit-item">
+                    <div class="benefit-icon">💰</div>
+                    <h3>Reducción Dramática de Costos</h3>
+                    <p>60–90% menos en cómputo. Sin infraestructura nube. Procesamiento local, paga solo almacenamiento. Los costos de egress desaparecen.</p>
+                </div>
+                <div class="benefit-item">
+                    <div class="benefit-icon">🧪</div>
+                    <h3>Datos Sintéticos Integrados</h3>
+                    <p>Genera datasets realistas para testing. Prueba pipelines localmente sin datos de producción. Iteración más rápida, seguridad mejor.</p>
+                </div>
+                <div class="benefit-item">
+                    <div class="benefit-icon">🗄️</div>
+                    <h3>Funciona Con Cualquier BD</h3>
+                    <p>PostgreSQL, MySQL, Snowflake, BigQuery, DuckDB, Parquet, Arrow. Trae tu propio almacén de datos. Cero lock-in.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section id="features" class="products-section">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">Capacidades</span>
+                <h2>Construido para Equipos de Datos Modernos</h2>
+            </div>
+
+            <div class="product-grid">
+                <div class="product-card">
+                    <div class="product-header">
+                        <h3>📋 Orquestación de Pipelines</h3>
+                        <p class="product-description">Define flujos como DAGs SQL. Programa, monitorea y ejecuta con resolución de dependencias. Lógica de reintentos integrada, manejo de errores y notificaciones.</p>
+                    </div>
+                    <div class="product-details">
+                        <div class="detail-column">
+                            <h4>Incluye</h4>
+                            <ul>
+                                <li>Definición DAG basada en SQL</li>
+                                <li>Scheduler con soporte cron</li>
+                                <li>Resolución automática de dependencias</li>
+                                <li>Recuperación de errores & reintentos</li>
+                                <li>Dashboards de monitoreo</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="product-card">
+                    <div class="product-header">
+                        <h3>🔄 Transformación de Datos</h3>
+                        <p class="product-description">Escribe SQL. Transforma datos entre cualquier base de datos. cuiqData maneja ejecución, cacheo y optimización.</p>
+                    </div>
+                    <div class="product-details">
+                        <div class="detail-column">
+                            <h4>Incluye</h4>
+                            <ul>
+                                <li>Soporte multi-base de datos</li>
+                                <li>Procesamiento incremental</li>
+                                <li>Optimización de queries</li>
+                                <li>Materialización automática</li>
+                                <li>Análisis de desempeño</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="product-card">
+                    <div class="product-header">
+                        <h3>🔍 Calidad de Datos & Lineage</h3>
+                        <p class="product-description">Rastrea cada transformación. Valida calidad en cada paso. Lineage completo de origen a insight.</p>
+                    </div>
+                    <div class="product-details">
+                        <div class="detail-column">
+                            <h4>Incluye</h4>
+                            <ul>
+                                <li>Rastreo de lineage</li>
+                                <li>Profiling de datos</li>
+                                <li>Validaciones de calidad</li>
+                                <li>Detección de anomalías</li>
+                                <li>Registros de auditoría</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="product-card">
+                    <div class="product-header">
+                        <h3>🧪 Generación de Datos Sintéticos</h3>
+                        <p class="product-description">Crea datasets realistas desde tu esquema. Desarrolla y prueba localmente sin datos de producción.</p>
+                    </div>
+                    <div class="product-details">
+                        <div class="detail-column">
+                            <h4>Incluye</h4>
+                            <ul>
+                                <li>Generación consciente de esquema</li>
+                                <li>Preservación de distribución</li>
+                                <li>Integridad de relaciones</li>
+                                <li>Reglas personalizables</li>
+                                <li>Seeds reproducibles</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="product-card">
+                    <div class="product-header">
+                        <h3>🔗 Integración & Portabilidad</h3>
+                        <p class="product-description">Funciona con tu stack. Exporta a formatos estándar. Despliega en cualquier lugar—laptop, Docker, Kubernetes, on-prem.</p>
+                    </div>
+                    <div class="product-details">
+                        <div class="detail-column">
+                            <h4>Incluye</h4>
+                            <ul>
+                                <li>Conectores multi-BD</li>
+                                <li>Formatos de datos estándar</li>
+                                <li>CLI & API</li>
+                                <li>Soporte Docker</li>
+                                <li>Integración Git</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="product-card">
+                    <div class="product-header">
+                        <h3>📊 Monitoreo & Observabilidad</h3>
+                        <p class="product-description">Ve qué está corriendo. Rastrea desempeño. Detecta problemas antes de que se conviertan en incidentes.</p>
+                    </div>
+                    <div class="product-details">
+                        <div class="detail-column">
+                            <h4>Incluye</h4>
+                            <ul>
+                                <li>Dashboards en tiempo real</li>
+                                <li>Métricas de desempeño</li>
+                                <li>Configuración de alertas</li>
+                                <li>Logs de ejecución</li>
+                                <li>Tendencias históricas</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Use Cases Section -->
+    <section id="usecases" class="about-section">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">Quién Usa cuiqData</span>
+                <h2>Perfecto para equipos u organizaciones que necesitan datos confiables rápido</h2>
+            </div>
+
+            <div class="about-grid">
+                <div class="about-card">
+                    <div class="about-icon">🏢</div>
+                    <h3>Equipos de Datos Enterprise</h3>
+                    <p>Reemplaza Airflow sin perder control. Corre on-prem o híbrido. Compliance completo, registros de auditoría, sin dependencia de nube.</p>
+                </div>
+                <div class="about-card">
+                    <div class="about-icon">🚀</div>
+                    <h3>Startups en Escalamiento</h3>
+                    <p>Muévete rápido sin overhead de infraestructura. 60–90% reducción de costos vs nube. De laptop a producción en días, no meses.</p>
+                </div>
+                <div class="about-card">
+                    <div class="about-icon">🔬</div>
+                    <h3>Equipos de Analytics</h3>
+                    <p>SQL es tu lenguaje nativo. Prueba localmente. Despliega con confianza. Sin Python requerido.</p>
+                </div>
+                <div class="about-card">
+                    <div class="about-icon">🏛️</div>
+                    <h3>Industrias Reguladas</h3>
+                    <p>Gobierno, finanzas, healthcare. Control total de datos, sin dependencias externas, registros de auditoría completos.</p>
+                </div>
+                <div class="about-card">
+                    <div class="about-icon">🌍</div>
+                    <h3>Organizaciones Distribuidas</h3>
+                    <p>Funciona offline y en redes restringidas. Los datos permanecen locales. Sincroniza cuando estés listo.</p>
+                </div>
+                <div class="about-card">
+                    <div class="about-icon">📱</div>
+                    <h3>Sistemas Edge & IoT</h3>
+                    <p>Procesa datos donde se generan. Footprint mínimo de recursos. Cloud opcional.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Comparison Section -->
+    <section class="solution-section">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">cuiqData vs La Competencia</span>
+                <h2>Por qué los equipos eligen cuiqData</h2>
+            </div>
+
+            <div class="savings-table" style="max-width: 900px; margin: 0 auto;">
+                <div class="table-row header">
+                    <div class="table-cell">Característica</div>
+                    <div class="table-cell">cuiqData</div>
+                    <div class="table-cell">Airflow</div>
+                    <div class="table-cell">dbt</div>
+                </div>
+                <div class="table-row">
+                    <div class="table-cell">Tiempo de Setup</div>
+                    <div class="table-cell">Minutos</div>
+                    <div class="table-cell">Días</div>
+                    <div class="table-cell">Horas</div>
+                </div>
+                <div class="table-row">
+                    <div class="table-cell">Infraestructura Requerida</div>
+                    <div class="table-cell">Ninguna</div>
+                    <div class="table-cell">Kubernetes</div>
+                    <div class="table-cell">dbt Cloud</div>
+                </div>
+                <div class="table-row">
+                    <div class="table-cell">Testing Local</div>
+                    <div class="table-cell">✓ Fácil</div>
+                    <div class="table-cell">Difícil</div>
+                    <div class="table-cell">Limitado</div>
+                </div>
+                <div class="table-row">
+                    <div class="table-cell">Costo de Escalamiento</div>
+                    <div class="table-cell">Lineal (hardware)</div>
+                    <div class="table-cell">Exponencial (cloud)</div>
+                    <div class="table-cell">Billing por ejecución</div>
+                </div>
+                <div class="table-row">
+                    <div class="table-cell">Datos Sintéticos</div>
+                    <div class="table-cell">✓ Integrado</div>
+                    <div class="table-cell">Add-on</div>
+                    <div class="table-cell">No incluido</div>
+                </div>
+                <div class="table-row">
+                    <div class="table-cell">Rastreo de Lineage</div>
+                    <div class="table-cell">✓ Automático</div>
+                    <div class="table-cell">Manual</div>
+                    <div class="table-cell">Básico</div>
+                </div>
+                <div class="table-row">
+                    <div class="table-cell">Vendor Lock-In</div>
+                    <div class="table-cell">Ninguno</div>
+                    <div class="table-cell">Medio</div>
+                    <div class="table-cell">Medio</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section id="faq" class="faq-section">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">FAQ</span>
+                <h2>¿Preguntas sobre cuiqData?</h2>
+            </div>
+
+            <div class="faq-container">
+                <div class="faq-item">
+                    <h3>¿Qué reemplaza cuiqData?</h3>
+                    <p>cuiqData reemplaza <strong>Airflow + dbt + infraestructura nube</strong>. Maneja orquestación, transformación, scheduling y monitoreo en un sistema local-first. Sin Python requerido, sin Kubernetes necesario.</p>
+                </div>
+
+                <div class="faq-item">
+                    <h3>¿Puedo usar cuiqData con mi data warehouse existente?</h3>
+                    <p>Sí. cuiqData funciona con Snowflake, BigQuery, PostgreSQL, MySQL, DuckDB, y cualquier BD compatible con JDBC. Tus datos permanecen donde están; cuiqData orquesta las transformaciones.</p>
+                </div>
+
+                <div class="faq-item">
+                    <h3>¿Cómo escalo de laptop a producción?</h3>
+                    <p>Mismo SQL, misma configuración. Corre en tu laptop para desarrollo, luego despliega a Docker, Kubernetes, o servidores on-prem sin cambiar tus pipelines. Verdadera paridad dev-prod.</p>
+                </div>
+
+                <div class="faq-item">
+                    <h3>¿Qué hay sobre calidad de datos y testing?</h3>
+                    <p>cuiqData incluye validaciones integradas, profiling de datos y checks de calidad. Los datos de testing se generan sintéticamente para seguridad. Los registros de auditoría registran cada transformación.</p>
+                </div>
+
+                <div class="faq-item">
+                    <h3>¿Cómo funciona la generación de datos sintéticos?</h3>
+                    <p>Define un esquema o datos de muestra. cuiqData genera datasets de testing realistas que respetan distribuciones y relaciones. Prueba escenarios complejos sin datos de producción.</p>
+                </div>
+
+                <div class="faq-item">
+                    <h3>¿Es cuiqData compliant para industrias reguladas?</h3>
+                    <p>Sí. Soporte on-prem completo, sin dependencias externas, registros de auditoría completos, y los datos nunca salen de tu entorno. Ideal para healthcare, finanzas y gobierno.</p>
+                </div>
+
+                <div class="faq-item">
+                    <h3>¿Puedo usar cuiqData con cuiqMetrics?</h3>
+                    <p>Absolutamente. cuiqData entrega datos limpios y confiables. cuiqMetrics unifica definiciones de métricas y rastrea OKRs. Juntos forman una plataforma de decisiones completa.</p>
+                </div>
+
+                <div class="faq-item">
+                    <h3>¿Cuánto puedo ahorrar comparado con Airflow + cloud?</h3>
+                    <p>La mayoría de equipos reportan <strong>60–90% reducción de costos</strong>: sin cargos de cómputo en nube, sin fees de egress, overhead de infraestructura mínimo. ROI típicamente aparece en meses 1–3.</p>
+                </div>
+
+                <div class="faq-item">
+                    <h3>¿Funciona offline?</h3>
+                    <p>Sí. Todo corre localmente. Puedes desarrollar, probar y ejecutar pipelines sin internet. Sincroniza con un servidor cuando estés listo (opcional).</p>
+                </div>
+
+                <div class="faq-item">
+                    <h3>¿Qué lenguajes necesito conocer?</h3>
+                    <p>SQL. Eso es todo. Si puedes escribir SQL, puedes construir pipelines en cuiqData. Sin Python, sin YAML, sin DSLs.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing Section -->
+    <section class="calculator-section" id="pricing">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">Precios</span>
+                <h2>Precios Simples y Transparentes</h2>
+                <p class="section-subtitle">Paga por lo que usas. Sin fees ocultos. Sin cargos por query.</p>
+            </div>
+
+            <div class="team-size-selector" style="justify-content: center; margin: 60px 0;">
+                <div style="text-align: center;">
+                    <div class="team-buttons" style="justify-content: center;">
+                        <button class="team-btn" data-size="small">
+                            <span class="team-label">Pequeño</span>
+                            <span class="team-range">1–5 personas</span>
+                            <span class="team-price">$300–$1,000/mes</span>
+                        </button>
+                        <button class="team-btn active" data-size="medium">
+                            <span class="team-label">Mediano</span>
+                            <span class="team-range">6–20 personas</span>
+                            <span class="team-price">$1,000–$4,000/mes</span>
+                        </button>
+                        <button class="team-btn" data-size="large">
+                            <span class="team-label">Grande</span>
+                            <span class="team-range">21+ personas</span>
+                            <span class="team-price">$4,000+/mes</span>
+                        </button>
+                    </div>
+                    <p style="margin-top: 40px; color: #666;">
+                        <strong>Qué incluye:</strong> Pipelines ilimitados, transformaciones, checks de calidad de datos, generación de datos sintéticos, monitoreo y soporte.
+                    </p>
+                </div>
+            </div>
+
+            <div style="text-align: center; margin-top: 60px;">
+                <h3 style="margin-bottom: 30px;">Ahorros Estimados vs Airflow + Cloud</h3>
+                <div class="example-scenario" style="max-width: 600px; margin: 0 auto;">
+                    <div class="example-grid">
+                        <div class="example-item">
+                            <span class="example-label">Gasto Nube Actual:</span>
+                            <span class="example-value">~$8,000–$15,000/mes</span>
+                        </div>
+                        <div class="example-item">
+                            <span class="example-label">Costo cuiqData:</span>
+                            <span class="example-value">~$2,500/mes</span>
+                        </div>
+                        <div class="example-item highlight">
+                            <span class="example-label">Ahorros Mensuales:</span>
+                            <span class="example-value">~$5,500–$12,500</span>
+                        </div>
+                        <div class="example-item highlight">
+                            <span class="example-label">Ahorros Anuales:</span>
+                            <span class="example-value">~$66,000–$150,000</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Integration CTA -->
+    <section class="solution-section">
+        <div class="container" style="text-align: center;">
+            <div class="section-header">
+                <h2>¿Necesitas también tracking de métricas y OKRs unificados?</h2>
+                <p class="section-subtitle">Combina cuiqData con cuiqMetrics para una plataforma de decisiones completa</p>
+            </div>
+            <a href="/cuiqmetrics/index_es.html" class="btn btn-secondary" style="display: inline-block;">Aprender Sobre cuiqMetrics</a>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section" id="download">
+        <div class="container">
+            <h2>¿Listo para simplificar tus pipelines de datos?</h2>
+            <div class="cta-group">
+                <a href="#" class="btn btn-primary">Descargar Preview</a>
+                <a href="#" class="btn btn-secondary" id="waitlist">Unirse a la Lista de Espera</a>
+            </div>
+            <div class="links">
+                <a href="#">Leer la Documentación</a>
+                <a href="#">Ver en GitHub</a>
+                <a href="#">Contactar Ventas</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <a href="/index_es.html" style="text-decoration: none; display: flex; align-items: center;">
+                        <img src="/static/cuiqANALYTICS.svg" height="24" alt="Logo cuiqAnalytics">
+                    </a>
+                </div>
+                <div class="footer-links">
+                    <a href="/index_es.html">Inicio cuiqAnalytics</a>
+                    <a href="/cuiqmetrics/index_es.html">cuiqMetrics</a>
+                    <a href="https://github.com/cuiqanalytics/cuiqdata">GitHub</a>
+                </div>
+            </div>
+            <div class="copyright">
+                © 2025 cuiqAnalytics • cuiqData es parte de la suite cuiqAnalytics
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu toggle
+        const hamburger = document.getElementById('hamburger');
+        const navLinks = document.getElementById('navLinks');
+        
+        hamburger.addEventListener('click', () => {
+            hamburger.classList.toggle('active');
+            navLinks.classList.toggle('active');
+        });
+        
+        navLinks.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => {
+                hamburger.classList.remove('active');
+                navLinks.classList.remove('active');
+            });
+        });
+
+        // Smooth scrolling
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Intersection Observer for fade-in animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -100px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.animation = 'fadeInUp 0.8s ease-out forwards';
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.product-card, .problem-card, .benefit-item, .about-card, .faq-item').forEach(el => {
+            observer.observe(el);
+        });
+
+        // Navbar background on scroll
+        const nav = document.querySelector('nav');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 50) {
+                nav.style.background = 'rgba(255, 255, 255, 0.98)';
+                nav.style.boxShadow = '0 4px 20px rgba(0, 0, 0, 0.08)';
+            } else {
+                nav.style.background = 'rgba(255, 255, 255, 0.95)';
+                nav.style.boxShadow = '0 2px 12px rgba(0, 0, 0, 0.05)';
+            }
+        });
+    </script>
+</body>
+
+</html>
