@@ -1,522 +1,227 @@
 <!DOCTYPE html>
-<html lang="en">
-
+<html lang="en" data-product="cuiq">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>cuiqAnalytics - From Data to Decisions. Plain and Simple.</title>
-    <link rel="stylesheet" href="/static/styles.css">
-    <script src="/static/finisher-header.es5.min.js" type="text/javascript"></script>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>cuiqanalytics — small, sharp tools for data work</title>
+<meta name="description" content="cuiqanalytics makes local-first command-line tools for data work: rgen generates realistic test data, qdata runs SQL pipelines, asql turns SQL into dashboards. Single binaries on an embedded DuckDB engine. No account, no telemetry.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://www.cuiqanalytics.com/">
+<meta property="og:title" content="cuiqanalytics — small, sharp tools for data work">
+<meta property="og:description" content="rgen makes the data, qdata runs the pipeline, asql builds the dashboard. Plain SQL, on your machine.">
+<link rel="canonical" href="https://www.cuiqanalytics.com/">
+<link rel="icon" href="brand/icon-cuiq.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,400..800&family=IBM+Plex+Mono:wght@400;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="brand/brand.css">
+<script src="brand/brand.js"></script>
+<link rel="stylesheet" href="style.css">
 </head>
-
 <body>
-    <!-- Navigation -->
-    <nav>
-        <div class="header">
-            <img src="/static/cuiqANALYTICS.svg" height="32" alt="cuiqAnalytics Logo">
-            <button class="hamburger" id="hamburger">
-                <span></span>
-                <span></span>
-                <span></span>
-            </button>
-            <div class="nav-links" id="navLinks">
-                <a href="#why">Why</a>
-                <a href="#products">Products</a>
-                <a href="#vision">Vision</a>
-                <a href="#calculator">Impact</a>
-                <a href="#faq">FAQ</a>
-                <a href="#about">About Us</a>
-                <a href="/index_es.html" class="lang-link">ES</a>
-            </div>
-        </div>
+
+<a class="skip" href="#main">Skip to content</a>
+
+<div class="cq-bar">
+  <div class="cq-bar-in">
+    <a class="cq-logo" href="https://www.cuiqanalytics.com/"><img src="brand/icon-cuiq.svg" alt="" width="18" height="18"><span>cuiq<b>analytics</b></span></a>
+    <nav class="cq-products" aria-label="cuiqanalytics tools">
+      <a href="https://cuiqanalytics.github.io/rgen/"><span class="dot dot-rgen" aria-hidden="true"></span>rgen</a>
+      <a href="https://cuiqanalytics.github.io/qdata/"><span class="dot dot-qdata" aria-hidden="true"></span>qdata</a>
+      <a href="https://www.asql.dev/"><span class="dot dot-asql" aria-hidden="true"></span>asql</a>
     </nav>
+  </div>
+</div>
+<header class="site-header">
+  <nav class="nav" aria-label="Main">
+    <a href="#top" class="brand brand-cuiq" aria-label="cuiqanalytics home"><img src="brand/icon-cuiq.svg" alt="" width="28" height="28"><span>cuiq<b>analytics</b></span></a>
+    <div class="nav-links">
+      <a href="#tools">Tools</a>
+      <a href="#fit">How they fit</a>
+      <a href="#shared">What they share</a>
+      <a href="#pricing">Pricing</a>
+      <a href="#about">About</a>
+    </div>
+    <button class="theme-toggle" type="button" aria-label="Switch color theme" title="Switch color theme">
+      <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path d="M12 3a9 9 0 1 0 9 9 7 7 0 0 1-9-9z" fill="currentColor"/></svg>
+    </button>
+    <a href="#tools" class="btn btn-solid nav-cta">See the tools</a>
+  </nav>
+</header>
 
-    <!-- Hero Section -->
-    <section id="hero" class="hero finisher-header">
-        <div class="container">
-            <div class="hero-content fade-in">
-                <h1>From Data to Decisions<br>Plain and Simple</h1>
-                <p>We build simple tools for turning data into decisions.</p>
-                <div class="cta-group">
-                    <a href="#products" class="btn btn-primary">Explore products</a>
-                </div>
-            </div>
+<main id="main">
+
+  <section id="top" class="hero">
+    <div>
+      <h1>Small, sharp tools for data work.</h1>
+      <p class="lede">Three command-line tools that each do one job well. <b>rgen</b> makes realistic test data, <b>qdata</b> runs your SQL as a pipeline, and <b>asql</b> turns a query into a dashboard. Each one is a single binary on an embedded DuckDB engine: no server, no account, no telemetry.</p>
+      <div class="hero-cta">
+        <a href="#tools" class="btn btn-solid">See the tools</a>
+        <a href="#fit" class="btn btn-outline">How they fit together</a>
+      </div>
+    </div>
+    <figure class="session">
+      <pre class="terminal"><code><span class="c"># make data that looks real</span>
+<span class="p">$</span> <span class="t-rgen">rgen</span> run -n 50000 --config shop.toml shop.duckdb
+<span class="ok">✓</span> customers, orders, order_items written
+
+<span class="c"># clean and model it in numbered SQL files</span>
+<span class="p">$</span> <span class="t-qdata">qdata</span> run my_pipeline
+<span class="ok">✓</span> 4 steps, each logged and cached
+
+<span class="c"># ship the result as one HTML dashboard</span>
+<span class="p">$</span> <span class="t-asql">asql</span> build report.sql
+<span class="ok">✓</span> report.html</code></pre>
+      <figcaption>An example session: three tools, plain SQL in between, everything on your laptop.</figcaption>
+    </figure>
+  </section>
+
+  <section id="tools" class="wrap">
+    <h2>The tools</h2>
+    <p class="section-lede">Use one, or chain all three. Each is free, with no row or pipeline limits.</p>
+    <div class="tools">
+
+      <article class="tool" data-tool="rgen">
+        <a class="tool-media" href="https://cuiqanalytics.github.io/rgen/" tabindex="-1" aria-hidden="true">
+          <img src="https://cuiqanalytics.github.io/rgen/media/rgen-hero-poster.jpg" alt="" loading="lazy" width="1920" height="1080">
+        </a>
+        <div class="tool-body">
+          <h3><img src="brand/icon-rgen.svg" alt="" width="30" height="30">rgen</h3>
+          <p class="tool-pitch">Realistic test data from one command.</p>
+          <p>Names that match their emails, cities that exist, amounts with a real long tail and foreign keys that join. Time series, lifecycles and digital twins of real datasets, written to CSV, JSON, Parquet, Excel, DuckDB or SQLite.</p>
+          <div class="cmd">
+            <code><span class="sigil" aria-hidden="true">$</span>curl -fsSL https://cuiqanalytics.github.io/rgen/install.sh | sh</code>
+            <button class="copy" type="button" data-copy="curl -fsSL https://cuiqanalytics.github.io/rgen/install.sh | sh">Copy</button>
+          </div>
+          <p class="tool-links"><a class="btn btn-outline" href="https://cuiqanalytics.github.io/rgen/">Visit rgen</a> <a href="https://github.com/cuiqanalytics/rgen">GitHub</a></p>
         </div>
-    </section>
+      </article>
 
-    <!-- Why Section -->
-    <section class="why-section" id="why">
-        <div class="container">
-            <div class="section-header">
-                <span class="section-tag">The Problem</span>
-                <h2>Data and decisions are disconnected. Teams waste time debating tools and definitions instead of executing.</h2>
-            </div>
+      <article class="tool" data-tool="qdata">
+        <a class="tool-media" href="https://cuiqanalytics.github.io/qdata/" tabindex="-1" aria-hidden="true">
+          <pre class="mini-term"><code><span class="c">$</span> qdata run books
+<span class="n">1</span> crawl    5 pages: 0 fetched, 5 from cache  <span class="hit">cache</span>
+<span class="n">2</span> extract  xpath_all(body, '//article/h3/a/@title')
+           100 rows
+<span class="n">3</span> export   output/books.csv  <span class="ok">written</span>
 
-            <div class="problem-grid">
-                <div class="problem-card">
-                    <h3>📊 Metric Chaos</h3>
-                    <p>Finance defines "ARR" one way. Sales another. Your metrics aren't trusted. Teams debate endlessly.</p>
-                </div>
-                <div class="problem-card">
-                    <h3>🎯 Misaligned Execution</h3>
-                    <p>OKRs are set, but they're disconnected from real data. No automatic tracking. Goals feel theoretical.</p>
-                </div>
-                <div class="problem-card">
-                    <h3>📝 Manual Overhead</h3>
-                    <p>40% of time in alignment meetings. Manual KR tracking. Spreadsheets and dashboards never sync.</p>
-                </div>
-                <div class="problem-card">
-                    <h3>🔧 Tool Sprawl</h3>
-                    <p>You're buying three separate systems: Airflow (pipelines), dbt (metrics), Lattice (goals). They don't talk to each other.</p>
-                </div>
-                <div class="problem-card">
-                    <h3>💸 Cost Explosion</h3>
-                    <p>Cloud infrastructure + SaaS subscriptions + DevOps overhead + rework from definition conflicts.</p>
-                </div>
-                <div class="problem-card">
-                    <h3>⏰ Slow Decisions</h3>
-                    <p>Data teams spend time on infrastructure, not insight. OKR progress is always a week behind reality.</p>
-                </div>
-            </div>
-
-            <div class="callout">
-                <p><strong>The result:</strong> Teams can't move fast with confidence. Goals are set, but progress feels disconnected from data.</p>
-                <p style="margin-top: 16px;"><strong>cuiqAnalytics changes that</strong> by unifying your data pipeline, metrics definitions, and goal execution. One source of truth. One system. Automatic alignment.</p>
-            </div>
+<span class="ok">✓ Pipeline completed in 964ms</span></code></pre>
+        </a>
+        <div class="tool-body">
+          <h3><img src="brand/icon-qdata.svg" alt="" width="30" height="30">qdata</h3>
+          <p class="tool-pitch">SQL pipelines on your laptop.</p>
+          <p>Number your SQL files and run one command. Every step is logged and cached, so after a fix you replay from that step. It fetches and crawls websites too, and you parse the pages with XPath in plain SQL. No Airflow, no Python environment.</p>
+          <div class="cmd">
+            <code><span class="sigil" aria-hidden="true">$</span>curl -fsSL https://cuiqanalytics.github.io/qdata/install.sh | sh</code>
+            <button class="copy" type="button" data-copy="curl -fsSL https://cuiqanalytics.github.io/qdata/install.sh | sh">Copy</button>
+          </div>
+          <p class="tool-links"><a class="btn btn-outline" href="https://cuiqanalytics.github.io/qdata/">Visit qdata</a> <a href="https://github.com/cuiqanalytics/qdata">GitHub</a></p>
         </div>
-    </section>
+      </article>
 
-    <!-- Solution Section -->
-    <section class="solution-section">
-        <div class="container">
-            <div class="section-header">
-                <span class="section-tag">The Solution</span>
-                <h2>One complete platform: Data pipelines, unified metrics, and OKRs that auto-sync.</h2>
-                <p class="section-subtitle">Replace Airflow + dbt + Lattice + spreadsheets with cuiqAnalytics. Reliable data, single source of truth for metrics, and OKRs that actually reflect reality—all 100% locally or on-prem. Own your stack.</p>
-            </div>
-
-            <div class="benefits-grid">
-                <div class="benefit-item">
-                    <div class="benefit-icon">🎯</div>
-                    <h3>Decision Confidence</h3>
-                    <p>One source of truth for metrics. End metric debates. Know your real progress.</p>
-                </div>
-                <div class="benefit-item">
-                    <div class="benefit-icon">⚡</div>
-                    <h3>Alignment Speed</h3>
-                    <p>Teams stop debating definitions. Move directly to execution. Less meetings, more shipping.</p>
-                </div>
-                <div class="benefit-item">
-                    <div class="benefit-icon">📊</div>
-                    <h3>Goal Execution</h3>
-                    <p>KRs auto-update from data. No manual spreadsheets. OKRs sync with reality in real-time.</p>
-                </div>
-                <div class="benefit-item">
-                    <div class="benefit-icon">🛠️</div>
-                    <h3>Simplicity & Control</h3>
-                    <p>Local-first, portable, no vendor lock-in. Your data stays yours. Your metrics stay yours.</p>
-                </div>
-                <div class="benefit-item">
-                    <div class="benefit-icon">💰</div>
-                    <h3>Dramatic Cost Reduction</h3>
-                    <p>One tool replaces three. No cloud infrastructure. 60–90% less on compute, orchestration, tools.</p>
-                </div>
-                <div class="benefit-item">
-                    <div class="benefit-icon">🔄</div>
-                    <h3>AI-Assisted Alignment</h3>
-                    <p>AI consensus on metric definitions. Conflict resolution. Metric lineage automatically tracked.</p>
-                </div>
-            </div>
-
-            <div class="callout" style="text-align: center; margin-top: 60px;">
-                <p style="font-size: 24px;">Move faster with confidence. Stay aligned without meetings.</p>
-            </div>
+      <article class="tool" data-tool="asql">
+        <a class="tool-media" href="https://www.asql.dev/" tabindex="-1" aria-hidden="true">
+          <img src="https://www.asql.dev/media/asql-hero-poster.jpg" alt="" loading="lazy" width="1920" height="1080">
+        </a>
+        <div class="tool-body">
+          <h3><img src="brand/icon-asql.svg" alt="" width="30" height="30">asql</h3>
+          <p class="tool-pitch">Write SQL. Get a dashboard.</p>
+          <p>Write the query you already know, add a few <code>-- @</code> comments, and asql renders it into a polished, self-contained HTML report. No BI tool, no notebook, no JavaScript. The SQL stays a file you can read, diff and own.</p>
+          <div class="cmd">
+            <code><span class="sigil" aria-hidden="true">$</span>curl -fsSL https://www.asql.dev/install.sh | sh</code>
+            <button class="copy" type="button" data-copy="curl -fsSL https://www.asql.dev/install.sh | sh">Copy</button>
+          </div>
+          <p class="tool-links"><a class="btn btn-outline" href="https://www.asql.dev/">Visit asql</a> <a href="https://github.com/cuiqanalytics/asql">GitHub</a></p>
         </div>
-    </section>
+      </article>
 
-    <!-- Products Section -->
-    <section class="products-section" id="products">
-        <div class="container">
-            <div class="section-header">
-                <span class="section-tag">Core Products</span>
-                <h2>A Complete Decision Platform</h2>
-                <p class="section-subtitle">Use cuiqData and cuiqMetrics together, or independently. Both run 100% locally, under your control.</p>
-            </div>
+    </div>
+    <p class="section-foot">Linux binaries, plus Docker images for macOS and Windows: <code>ghcr.io/cuiqanalytics/rgen</code>, <code>qdata</code> and <code>asql</code>.</p>
+  </section>
 
-            <div class="product-grid">
+  <section id="fit" class="fit">
+    <div class="wrap">
+      <h2>How they fit together</h2>
+      <p class="section-lede">The tools share an engine and a language, so the output of one is the input of the next. No glue code, no conversion step.</p>
+      <ol class="flow">
+        <li style="--c: var(--marigold)">
+          <span class="flow-n">1</span>
+          <h3>Make the data</h3>
+          <p><b>rgen</b> builds tables that join and look like production: customers, orders, events, readings. Test the pipeline before the real data arrives, or share data you can't hand out.</p>
+        </li>
+        <li style="--c: var(--cobalt)">
+          <span class="flow-n">2</span>
+          <h3>Shape it with SQL</h3>
+          <p><b>qdata</b> runs a folder of numbered SQL files: ingest, validate, transform, export. Bring in files, databases or web pages and keep a log of every run.</p>
+        </li>
+        <li style="--c: var(--ember)">
+          <span class="flow-n">3</span>
+          <h3>Show the result</h3>
+          <p><b>asql</b> turns the final queries into one HTML file: a dashboard for the team or a narrative report for the board. Email it, commit it or put it on any static host.</p>
+        </li>
+      </ol>
+    </div>
+  </section>
 
-                <!-- cuiqData -->
-                <div class="product-card">
-                    <div class="product-content">
-                        <div class="product-header">
-                            <h3>
-                                <img src="/static/cuiqDATA.svg" height="32" alt="cuiqDATA logo">
-                            </h3>
-                            <span style="font-size: 13px; color: #666; font-weight: normal; display: block; margin-top: 4px;">Work with data without complex systems</span>
-                            <p class="product-description">Design, run, and understand data pipelines directly on your laptop. cuiqData lets you transform data using SQL, without servers, schedulers, or complex setup. Start locally, stay in control, and move to production only when it’s worth it.</p>
-                        </div>
-                        <div class="cta-group" style="margin-top: 20px; gap: 10px;">
-                            <a href="/cuiqdata.html" class="btn btn-secondary" style="flex: 1;">Learn More</a>
-                            <a href="https://github.com/cuiqanalytics/cuiqdata/releases/latest" class="btn btn-primary cuiqdata-download" style="flex: 1;">Download</a>
-                        </div>
-                    </div>
-                    <div class="product-showcase">
-                        <img src="/cuiqdata.png" alt="cuiqData Demo" style="width: 100%; height: 100%; object-fit: cover; border-radius: 8px;">
-                    </div>
-                </div>
+  <section id="shared" class="wrap">
+    <h2>What they share</h2>
+    <div class="shared">
+      <div><h3>Plain SQL</h3><p>Your logic lives in SQL files you can read, review and diff. Nothing you write is locked into a proprietary format.</p></div>
+      <div><h3>Local-first</h3><p>Everything runs on your laptop or your own server. Your data never leaves your machine, and the tools work offline.</p></div>
+      <div><h3>One binary, DuckDB inside</h3><p>A single download with an embedded DuckDB engine. No Python environment, no database server, no scheduler to stand up.</p></div>
+      <div><h3>Ready for AI agents</h3><p>Each tool ships a Claude Code skill, so an agent writes correct configs, pipelines and reports, and you keep the readable files.</p></div>
+      <div><h3>No account, no telemetry</h3><p>Install and run. Nothing phones home, and nothing needs a sign-up.</p></div>
+      <div><h3>Free to use</h3><p>The tools are free with no row or pipeline limits. Optional paid add-ons fund the work.</p></div>
+    </div>
+  </section>
 
-                <!-- cuiqMetrics -->
-                <div class="product-card">
-                    <div class="product-content">
-                        <div class="product-header">
-                            <h3>
-                                <img src="/static/cuiqMETRICS.svg" height="32" alt="cuiqMETRICS logo">
-                            </h3>
-                            <span style="font-size: 13px; color: #666; font-weight: normal; display: block; margin-top: 4px;">Metrics Governance & OKR Alignment</span>
-                            <p class="product-description">One definition per metric. OKRs that auto-sync with data. AI-assisted consensus on definitions, automatic goal cascading, confidence scoring, and complete lineage tracking.</p>
-                        </div>
-                        <div class="cta-group" style="margin-top: 20px; gap: 10px;">
-                            <a href="/cuiqmetrics.html" class="btn btn-secondary" style="flex: 1;">Learn More</a>
-                            <a href="https://github.com/cuiqanalytics/cuiqmetrics/releases/latest" class="btn btn-primary cuiqmetrics-download" style="flex: 1;">Download</a>
-                        </div>
-                    </div>
-                    <div class="product-showcase">
-                        <img src="/cuiqmetrics.png" alt="cuiqMetrics Demo" style="width: 100%; height: 100%; object-fit: cover; border-radius: 8px;">
-                    </div>
-                </div>
-            </div>
+  <section id="pricing" class="wrap">
+    <h2>Pricing</h2>
+    <p class="section-lede">The tools are free. Two of them have optional extras.</p>
+    <div class="table-scroll">
+      <table class="prices">
+        <thead><tr><th scope="col">Tool</th><th scope="col">Free</th><th scope="col">Optional</th></tr></thead>
+        <tbody>
+          <tr><th scope="row"><a href="https://cuiqanalytics.github.io/rgen/#pricing">rgen</a></th><td>Every provider, any number of rows, relational configs, twins</td><td>Industry data packs: $79 a year for one, $199 a year for all</td></tr>
+          <tr><th scope="row"><a href="https://cuiqanalytics.github.io/qdata/#pricing">qdata</a></th><td>Unlimited pipelines and steps, replay, connectors, HTML run reports</td><td>Pro: crawling, scheduler and REST API, $49 one-time with a year of updates</td></tr>
+          <tr><th scope="row"><a href="https://www.asql.dev/">asql</a></th><td>Everything</td><td>—</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="section-foot">Teams, on-prem use or invoicing: <a href="mailto:rodrigo.abt@gmail.com?subject=cuiqanalytics">write to us</a>.</p>
+  </section>
 
-            <div class="callout" style="text-align: center; margin-top: 50px;">
-                <p><strong>Use Both Together:</strong> cuiqData feeds reliable data → cuiqMetrics unifies definitions and tracks OKRs → Your organization executes with confidence.</p>
-            </div>
-        </div>
-    </section>
+  <section id="about" class="wrap about">
+    <div>
+      <h2>About</h2>
+    </div>
+    <div>
+      <p>cuiqanalytics builds tools for people who work with data and want fewer moving parts. We think most analytics work fits on one machine, that SQL is the right language for it, and that a tool should be a download, not a platform.</p>
+      <p>Questions, ideas or a bug to report? <a href="mailto:rodrigo.abt@gmail.com?subject=cuiqanalytics">Write to us</a>, or open an issue on <a href="https://github.com/cuiqanalytics">GitHub</a>.</p>
+    </div>
+  </section>
 
-    <!-- Stats Section -->
-    <section class="stats-section">
-        <div class="container">
-            <div class="section-header">
-                <span class="section-tag" style="background: rgba(255,255,255,0.2); color: white;">Traction</span>
-                <h2 style="color: white;">Teams using cuiqAnalytics in early pilots report:</h2>
-            </div>
-            <div class="stats-grid">
-                <div class="stat-item">
-                    <h3>40–70%</h3>
-                    <p>Faster analytics cycles</p>
-                </div>
-                <div class="stat-item">
-                    <h3>Dramatic</h3>
-                    <p>Reduction in cloud spend</p>
-                </div>
-                <div class="stat-item">
-                    <h3>Better</h3>
-                    <p>Goal alignment and execution</p>
-                </div>
-            </div>
-        </div>
-    </section>
+</main>
 
-    <!-- Vision Section -->
-    <section id="vision">
-        <div class="container">
-            <div class="section-header">
-                <span class="section-tag">Vision</span>
-                <h2>Empowering every organization to run world-class analytics</h2>
-                <p class="section-subtitle">Fast, local, and fully under their control.</p>
-            </div>
+<footer class="site-footer">
+  <div class="wrap cq-footer">
+    <div>
+      <a class="cq-logo" href="https://www.cuiqanalytics.com/"><img src="brand/icon-cuiq.svg" alt="" width="22" height="22"><span>cuiq<b>analytics</b></span></a>
+      <p class="cq-footer-note">Small, sharp command-line tools for data work. Local-first, built on DuckDB.</p>
+    </div>
+    <a class="cq-prod" href="https://cuiqanalytics.github.io/rgen/"><img src="brand/icon-rgen.svg" alt="" width="28" height="28"><b>rgen</b><span>Realistic test data from one command.</span></a>
+    <a class="cq-prod" href="https://cuiqanalytics.github.io/qdata/"><img src="brand/icon-qdata.svg" alt="" width="28" height="28"><b>qdata</b><span>SQL pipelines on your laptop.</span></a>
+    <a class="cq-prod" href="https://www.asql.dev/"><img src="brand/icon-asql.svg" alt="" width="28" height="28"><b>asql</b><span>Write SQL. Get a dashboard.</span></a>
+  </div>
+  <div class="wrap">
+    <nav style="margin-top:28px" class="footer-links" aria-label="Resources">
+      <a href="https://github.com/cuiqanalytics">GitHub</a>
+      <a href="mailto:rodrigo.abt@gmail.com?subject=cuiqanalytics">Contact</a>
+    </nav>
+  </div>
+  <p class="wrap copyright">© 2026 cuiqanalytics.</p>
+</footer>
 
-            <div class="callout" style="text-align: center;">
-                <p>We believe analytics should be accessible, affordable, and autonomous. No team should be held back by
-                    infrastructure complexity or cloud dependency.</p>
-            </div>
-        </div>
-    </section>
-
-    <!-- Savings Preview Section -->
-    <section class="calculator-section" id="calculator">
-        <div class="container">
-            <div class="section-header">
-                <span class="section-tag">Proven Savings</span>
-                <h2>ROI Across Both Products</h2>
-                <p class="section-subtitle">Teams using cuiqData and cuiqMetrics report dramatic cost reductions and time savings</p>
-            </div>
-
-            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 40px; margin-top: 50px; max-width: 900px; margin-left: auto; margin-right: auto;">
-                <div>
-                    <h3 style="text-align: center; margin-bottom: 20px;">cuiqData</h3>
-                    <div class="example-scenario">
-                        <div class="example-grid">
-                            <div class="example-item">
-                                <span class="example-label">Cloud Savings:</span>
-                                <span class="example-value">60–90%</span>
-                            </div>
-                            <div class="example-item">
-                                <span class="example-label">Setup Time:</span>
-                                <span class="example-value">From Days to Hours</span>
-                            </div>
-                            <div class="example-item">
-                                <span class="example-label">Typical Monthly Savings:</span>
-                                <span class="example-value">~$5,500–$12,500</span>
-                            </div>
-                        </div>
-                    </div>
-                    <a href="/cuiqdata/" class="btn btn-secondary" style="display: block; text-align: center; margin-top: 20px;">Explore cuiqData</a>
-                </div>
-
-                <div>
-                    <h3 style="text-align: center; margin-bottom: 20px;">cuiqMetrics</h3>
-                    <div class="example-scenario">
-                        <div class="example-grid">
-                            <div class="example-item">
-                                <span class="example-label">Time Saved:</span>
-                                <span class="example-value">60–120 hours/quarter</span>
-                            </div>
-                            <div class="example-item">
-                                <span class="example-label">Alignment Meetings:</span>
-                                <span class="example-value">40–50% Reduction</span>
-                            </div>
-                            <div class="example-item">
-                                <span class="example-label">Annual Value Saved:</span>
-                                <span class="example-value">~$36,000–$72,000</span>
-                            </div>
-                        </div>
-                    </div>
-                    <a href="/cuiqmetrics/" class="btn btn-secondary" style="display: block; text-align: center; margin-top: 20px;">Explore cuiqMetrics</a>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- FAQ Section -->
-    <section id="faq" class="faq-section">
-        <div class="container">
-            <div class="section-header">
-                <span class="section-tag">FAQ</span>
-                <h2>Questions? We have answers</h2>
-            </div>
-
-            <div class="faq-container">
-                <div class="faq-item">
-                    <h3>What is cuiqAnalytics?</h3>
-                    <p>cuiqAnalytics is a <strong>local-first</strong> analytics suite powered by AI. Everything runs on your computer or your own servers—no cloud dependency, no servers to maintain, no infrastructure complexity.</p>
-                </div>
-
-                <div class="faq-item">
-                    <h3>Why "local-first"?</h3>
-                    <p>Because it's faster, simpler, and more secure. With cuiqAnalytics: your data never leaves your environment, pipelines run 10–100× faster, you avoid cloud and egress costs, you have complete control, and maintenance is nearly zero.</p>
-                </div>
-
-                <div class="faq-item">
-                    <h3>What products are included?</h3>
-                    <p><strong>cuiqData</strong> – SQL-based orchestration and transformation. <strong>cuiqMetrics</strong> – Unified metric definitions and OKR tracking. Use independently or together. Both run 100% locally.</p>
-                </div>
-
-                <div class="faq-item">
-                    <h3>How do teams collaborate if everything is local?</h3>
-                    <p>Through <strong>Git-like workflows</strong>: shared repos, version control, pull requests, optional server syncing, and AI-assisted conflict resolution. Modern collaboration without cloud services.</p>
-                </div>
-
-                <div class="faq-item">
-                    <h3>Is it secure?</h3>
-                    <p>Yes, even more secure than cloud solutions. Data never goes to external services, no third-party APIs process your information, runs 100% behind your firewall, smaller attack surface → less risk. Local-first = security by design.</p>
-                </div>
-
-                <div class="faq-item">
-                    <h3>Do I need to replace my entire stack?</h3>
-                    <p>No. cuiqAnalytics integrates with what you have: files, databases, data lakes, warehouses. Uses open formats (SQL, Parquet, Arrow), modular adoption with zero migration, and zero lock-in.</p>
-                </div>
-
-                <div class="faq-item">
-                    <h3>Does it work without internet?</h3>
-                    <p>Yes. Everything works offline, on isolated networks, in secure or regulated environments, and on on-prem servers. Ideal for government, banking, healthcare, and enterprises with strict policies.</p>
-                </div>
-
-                <div class="faq-item">
-                    <h3>What use cases is it ideal for?</h3>
-                    <p>ETL/ELT pipelines, analytics workflows, data transformations, metrics governance, and goal execution. If you're tired of cloud complexity and vendor lock-in, this is for you.</p>
-                </div>
-
-                <div class="faq-item">
-                    <h3>How do I get started?</h3>
-                    <p>Download the preview, join the waitlist, explore <a href="/cuiqdata/">cuiqData</a> or <a href="/cuiqmetrics/">cuiqMetrics</a>, or contact us for pilots and enterprise versions.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- About Section -->
-    <section id="about" class="about-section">
-        <div class="container">
-            <div class="section-header">
-                <span class="section-tag">About Us</span>
-                <h2>Built by people who understand analytics</h2>
-                <p class="section-subtitle">We've spent over a decade solving complex data and analytics problems for organizations of all sizes.</p>
-            </div>
-
-            <div class="about-grid">
-                <div class="about-card">
-                    <div class="about-icon">🎯</div>
-                    <h3>Our Mission</h3>
-                    <p>Enable organizations to make faster, better-aligned decisions with data. No cloud dependency. No infrastructure complexity. Just clarity, alignment, and outcomes.</p>
-                </div>
-                <div class="about-card">
-                    <div class="about-icon">🔬</div>
-                    <h3>Our Expertise</h3>
-                    <p>Our team has built and scaled data platforms at Fortune 500 companies, hyper-scale startups, and has firsthand experience with the pain points cloud-based solutions create.</p>
-                </div>
-                <div class="about-card">
-                    <div class="about-icon">💡</div>
-                    <h3>Our Approach</h3>
-                    <p>We start by listening. We understand your challenges. We build solutions that fit how your team already works, not the other way around.</p>
-                </div>
-            </div>
-
-            <div class="callout" style="margin-top: 60px;">
-                <p><strong>We're passionate about local-first analytics</strong> and believe it's the future of enterprise data intelligence.</p>
-                <p style="margin-top: 16px;">If you love building tools that empower teams, consider <a href="#">joining our team</a>.</p>
-            </div>
-        </div>
-    </section>
-
-    <!-- CTA Section -->
-     <section class="cta-section" id="download">
-        <div class="container">
-            <h2>Ready to experience local-first analytics?</h2>
-            <div class="cta-group">
-                <a href="#" class="btn btn-primary">Download Preview</a>
-                <a href="#" class="btn btn-secondary" id="waitlist">Join the Waitlist</a>
-            </div>
-            <div class="links">
-                <a href="#">Read the Documentation</a>
-                <a href="#">View on GitHub</a>
-                <a href="#">Contact Sales</a>
-            </div>
-        </div>
-    </section>
-
-    <!-- Footer -->
-    <footer>
-        <div class="container">
-            <div class="footer-content">
-                <div class="footer-logo">
-                    <img src="static/cuiqANALYTICS.svg" height="24" alt="cuiqAnalytics Logo">
-                </div>
-                <div class="footer-links">
-                    <a href="#">Contact</a>
-                    <a href="#">Docs</a>
-                    <a href="#">GitHub</a>
-                    <a href="#">Privacy</a>
-                    <a href="#">Terms</a>
-                </div>
-            </div>
-            <div class="copyright">
-                © 2025 cuiqAnalytics • Local-First Data Intelligence
-            </div>
-        </div>
-    </footer>
-
-    <script>
-        // Mobile menu toggle
-        const hamburger = document.getElementById('hamburger');
-        const navLinks = document.getElementById('navLinks');
-        
-        hamburger.addEventListener('click', () => {
-            hamburger.classList.toggle('active');
-            navLinks.classList.toggle('active');
-        });
-        
-        // Close menu when a link is clicked
-        navLinks.querySelectorAll('a').forEach(link => {
-            link.addEventListener('click', () => {
-                hamburger.classList.remove('active');
-                navLinks.classList.remove('active');
-            });
-        });
-
-        // Smooth scrolling
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                const target = document.querySelector(this.getAttribute('href'));
-                if (target) {
-                    target.scrollIntoView({
-                        behavior: 'smooth',
-                        block: 'start'
-                    });
-                }
-            });
-        });
-
-        // Intersection Observer for fade-in animations
-        const observerOptions = {
-            threshold: 0.1,
-            rootMargin: '0px 0px -100px 0px'
-        };
-
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.style.animation = 'fadeInUp 0.8s ease-out forwards';
-                }
-            });
-        }, observerOptions);
-
-        // Observe all cards and sections
-        document.querySelectorAll('.product-card, .problem-card, .benefit-item').forEach(el => {
-            observer.observe(el);
-        });
-
-        // Navbar background on scroll
-        const nav = document.querySelector('nav');
-        window.addEventListener('scroll', () => {
-            if (window.scrollY > 50) {
-                nav.style.background = 'rgba(255, 255, 255, 0.98)';
-                nav.style.boxShadow = '0 4px 20px rgba(0, 0, 0, 0.08)';
-            } else {
-                nav.style.background = 'rgba(255, 255, 255, 0.95)';
-                nav.style.boxShadow = '0 2px 12px rgba(0, 0, 0, 0.05)';
-            }
-        });
-    </script>
-<script type="text/javascript">
-new FinisherHeader({
-  "count": 90,
-  "size": {
-    "min": 1,
-    "max": 20,
-    "pulse": 0
-  },
-  "speed": {
-    "x": {
-      "min": 0,
-      "max": 0.4
-    },
-    "y": {
-      "min": 0,
-      "max": 0.1
-    }
-  },
-  "colors": {
-    "background": "#338000",
-    "particles": [
-      "#ffffff",
-      "#87ddfe",
-      "#acaaff",
-      "#1bffc2",
-      "#f88aff"
-    ]
-  },
-  "blending": "screen",
-  "opacity": {
-    "center": 0,
-    "edge": 0.4
-  },
-  "skew": 0,
-  "shapes": [
-    "s"
-  ]
-});
-</script>    
+<script src="script.js"></script>
 </body>
-
 </html>
