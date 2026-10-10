@@ -121,12 +121,18 @@
 
       <article class="tool" data-tool="asql">
         <a class="tool-media" href="https://www.asql.dev/" tabindex="-1" aria-hidden="true">
-          <img src="https://www.asql.dev/media/asql-hero-poster.jpg" alt="" loading="lazy" width="1920" height="1080">
+          <pre class="mini-term"><code><span class="t-asql">-- @chart: trend</span>
+<span class="c">-- title: Monthly revenue by channel</span>
+SELECT month AS date, channel AS series,
+       revenue AS value FROM monthly_revenue;
+
+<span class="c">$</span> asql build report.sql
+<span class="ok">Wrote report.html</span></code></pre>
         </a>
         <div class="tool-body">
           <h3><img src="brand/icon-asql.svg" alt="" width="30" height="30">asql</h3>
           <p class="tool-pitch">Write SQL. Get a dashboard.</p>
-          <p>Write the query you already know, add a few <code>-- @</code> comments, and asql renders it into a polished, self-contained HTML report. No BI tool, no notebook, no JavaScript. The SQL stays a file you can read, diff and own.</p>
+          <p>Write the query you already know, add a few <code>--&nbsp;@</code> comments, and asql renders it into a polished, self-contained HTML report. No BI tool, no notebook, no JavaScript. The SQL stays a file you can read, diff and own.</p>
           <div class="cmd">
             <code><span class="sigil" aria-hidden="true">$</span>curl -fsSL https://www.asql.dev/install.sh | sh</code>
             <button class="copy" type="button" data-copy="curl -fsSL https://www.asql.dev/install.sh | sh">Copy</button>
