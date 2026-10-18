@@ -1,1 +1,11 @@
 .tmp/
+docs/
+demos/
+.cursor/
+.agent/
+.claude/
+
+# HyperFrames video project build output
+video*/
+.superpowers/
+brochure/

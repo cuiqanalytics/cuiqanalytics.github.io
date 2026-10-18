@@ -60,21 +60,27 @@
         <a href="#fit" class="btn btn-outline">How they fit together</a>
       </div>
     </div>
-    <figure class="session">
-      <pre class="terminal"><code><span class="c"># make data that looks real</span>
-<span class="p">$</span> <span class="t-rgen">rgen</span> run -n 50000 --config shop.toml shop.duckdb
-<span class="ok">✓</span> customers, orders, order_items written
-
-<span class="c"># clean and model it in numbered SQL files</span>
-<span class="p">$</span> <span class="t-qdata">qdata</span> run my_pipeline
-<span class="ok">✓</span> 4 steps, each logged and cached
-
-<span class="c"># ship the result as one HTML dashboard</span>
-<span class="p">$</span> <span class="t-asql">asql</span> build report.sql
-<span class="ok">✓</span> report.html</code></pre>
-      <figcaption>An example session: three tools, plain SQL in between, everything on your laptop.</figcaption>
+    <figure class="hero-video">
+      <div class="hero-frame">
+        <video class="hero-loop" autoplay muted loop playsinline preload="metadata" poster="media/hero-poster.jpg"
+               aria-label="30-second silent preview: a fraud ring found in a report, a shipping decision for an online store, and one report per customer, all real screens from fictional data.">
+          <source src="media/hero-loop.webm" type="video/webm">
+          <source src="media/hero-loop.mp4" type="video/mp4">
+        </video>
+      </div>
+      <div class="hero-video-bar">
+        <button class="btn btn-solid watch" type="button" data-open="overview"><span aria-hidden="true">▶</span> Watch the 76 s overview</button>
+        <figcaption>Real screens from fictional data.</figcaption>
+      </div>
     </figure>
   </section>
+
+  <dialog id="overview" class="overview" aria-label="cuiqanalytics overview video">
+    <video controls playsinline preload="none" poster="media/overview-poster.jpg">
+      <source src="media/overview.mp4" type="video/mp4">
+    </video>
+    <form method="dialog"><button class="btn btn-outline" type="submit">Close</button></form>
+  </dialog>
 
   <section id="tools" class="wrap">
     <h2>The tools</h2>
@@ -166,6 +172,20 @@ SELECT month AS date, channel AS series,
           <p><b>asql</b> turns the final queries into one HTML file: a dashboard for the team or a narrative report for the board. Email it, commit it or put it on any static host.</p>
         </li>
       </ol>
+      <figure class="session fit-session">
+        <pre class="terminal"><code><span class="c"># make data that looks real</span>
+<span class="p">$</span> <span class="t-rgen">rgen</span> run -n 50000 --config shop.toml shop.duckdb
+<span class="ok">✓</span> customers, orders, order_items written
+
+<span class="c"># clean and model it in numbered SQL files</span>
+<span class="p">$</span> <span class="t-qdata">qdata</span> run my_pipeline
+<span class="ok">✓</span> 4 steps, each logged and cached
+
+<span class="c"># ship the result as one HTML dashboard</span>
+<span class="p">$</span> <span class="t-asql">asql</span> build report.sql
+<span class="ok">✓</span> report.html</code></pre>
+        <figcaption>The same flow in a terminal: three tools, plain SQL in between, everything on your machine.</figcaption>
+      </figure>
     </div>
   </section>
 
