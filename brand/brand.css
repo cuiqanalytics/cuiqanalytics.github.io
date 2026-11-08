@@ -1,7 +1,7 @@
-/* cuiqanalytics brand system: shared by cuiqanalytics.com, rgen, qdata and asql.
+/* cuiqanalytics brand system: shared by cuiqanalytics.com, rgen, qdata, asql and dchart.
    Source of truth: cuiqanalytics.github.io/brand/. Product sites carry a copy made by
    sync-brand.sh; edit here, then sync. Fog paper, Ink type, Cobalt structure, Marigold data,
-   Ember reports, Rose for broken data. Each page sets <html data-product="..."> for its accent. */
+   Ember reports, Teal charts, Rose for broken data. Each page sets <html data-product="..."> for its accent. */
 :root {
   --bg: #eef0f4;
   --surface: #ffffff;
@@ -30,6 +30,8 @@
   --radius: 10px;
   --ember: #e1724a;
   --ember-ink: #b04a1f;
+  --teal: #0f9d8a;
+  --teal-ink: #0b7466;
   --accent: var(--cobalt);
   --accent-ink: var(--cobalt-ink);
   color-scheme: light;
@@ -38,18 +40,19 @@
   :root:not([data-theme="light"]) {
     --bg: #14162a; --surface: #1c1f38; --sunk: #101224; --text: #eef0f4; --muted: #a3a8c9; --line: #2e3256;
     --cobalt: #8e9cff; --cobalt-ink: #aab5ff; --marigold-ink: #f5b84a; --rose: #ff8098; --rose-bg: #3a1a26;
-    --term-bg: #0e1020; --peg: #8e9cff; --ember-ink: #ff9a6b; color-scheme: dark;
+    --term-bg: #0e1020; --peg: #8e9cff; --ember-ink: #ff9a6b; --teal: #4fd1bd; --teal-ink: #7fe0d0; color-scheme: dark;
   }
 }
 :root[data-theme="dark"] {
   --bg: #14162a; --surface: #1c1f38; --sunk: #101224; --text: #eef0f4; --muted: #a3a8c9; --line: #2e3256;
   --cobalt: #8e9cff; --cobalt-ink: #aab5ff; --marigold-ink: #f5b84a; --rose: #ff8098; --rose-bg: #3a1a26;
-  --term-bg: #0e1020; --peg: #8e9cff; --ember-ink: #ff9a6b; color-scheme: dark;
+  --term-bg: #0e1020; --peg: #8e9cff; --ember-ink: #ff9a6b; --teal: #4fd1bd; --teal-ink: #7fe0d0; color-scheme: dark;
 }
 
 :root[data-product="rgen"]  { --accent: var(--marigold); --accent-ink: var(--marigold-ink); }
 :root[data-product="qdata"] { --accent: var(--cobalt);   --accent-ink: var(--cobalt-ink); }
 :root[data-product="asql"]  { --accent: var(--ember);    --accent-ink: var(--ember-ink); }
+:root[data-product="dchart"] { --accent: var(--teal);   --accent-ink: var(--teal-ink); }
 *, *::before, *::after { box-sizing: border-box; }
 html { scroll-behavior: smooth; scroll-padding-top: 76px; -webkit-text-size-adjust: 100%; }
 @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
@@ -134,12 +137,12 @@ main > section.wrap + section.wrap { padding-top: 0; }
 .cq-products a:hover { color: #f2f3f8; background: #ffffff12; }
 .cq-products a[aria-current="page"] { color: #f2f3f8; background: #ffffff1a; }
 .cq-products .dot { width: 7px; height: 7px; border-radius: 50%; flex: none; }
-.dot-rgen { background: #f5a524; } .dot-qdata { background: #8e9cff; } .dot-asql { background: #e1724a; }
+.dot-rgen { background: #f5a524; } .dot-qdata { background: #8e9cff; } .dot-asql { background: #e1724a; } .dot-dchart { background: #2fbfa8; }
 @media (max-width: 420px) { .cq-bar-in { gap: 8px; } .cq-products a { padding: 5px 7px; } .cq-products .dot { display: none; } }
 
 /* ---------- family footer row (inside .site-footer) ---------- */
 .cq-footer { margin-top: 44px; padding-top: 28px; border-top: 1px solid #ffffff1a; display: grid;
-  grid-template-columns: minmax(0, 0.9fr) repeat(3, minmax(0, 1fr)); gap: 20px 28px; align-items: start; }
+  grid-template-columns: minmax(0, 0.9fr) repeat(4, minmax(0, 1fr)); gap: 20px 28px; align-items: start; }
 .cq-footer .cq-logo { font-size: 16px; }
 .cq-footer .cq-logo img, .cq-footer .cq-logo svg { width: 22px; height: 22px; }
 .cq-footer-note { margin-top: 10px; font-size: 13px; color: var(--term-dim); max-width: 30ch; }
@@ -149,5 +152,6 @@ main > section.wrap + section.wrap { padding-top: 0; }
 .cq-prod span { font-size: 13px; line-height: 1.4; color: var(--term-dim); }
 .cq-prod:hover b { text-decoration: underline; }
 .cq-prod[aria-current="page"] b::after { content: " · you are here"; font: 400 12px var(--display); color: var(--term-dim); }
-@media (max-width: 900px) { .cq-footer { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+@media (max-width: 1000px) { .cq-footer { grid-template-columns: repeat(3, minmax(0, 1fr)); } }
+@media (max-width: 760px) { .cq-footer { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
 @media (max-width: 520px) { .cq-footer { grid-template-columns: minmax(0, 1fr); } }
