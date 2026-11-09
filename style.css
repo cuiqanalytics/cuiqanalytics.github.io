@@ -19,7 +19,7 @@
 .terminal .c { color: var(--term-dim); }
 .terminal .p { color: var(--term-dim); }
 .terminal .ok { color: var(--term-ok); }
-.t-rgen { color: #f5a524; font-weight: 600; } .t-qdata { color: #8e9cff; font-weight: 600; } .t-asql { color: #ff9a6b; font-weight: 600; }
+.t-rgen { color: #f5a524; font-weight: 600; } .t-qdata { color: #8e9cff; font-weight: 600; } .t-asql { color: #ff9a6b; font-weight: 600; } .t-dchart { color: #4fd1bd; font-weight: 600; }
 .session figcaption { margin-top: 12px; font-size: 14px; color: var(--muted); }
 @media (max-width: 900px) { .hero { grid-template-columns: minmax(0, 1fr); } }
 .hero-video { margin: 0; min-width: 0; }
@@ -40,10 +40,10 @@
 .section-foot { margin-top: 24px; color: var(--muted); font-size: 15px; }
 
 /* ---------- tools ---------- */
-.tools { margin-top: 40px; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 22px; }
+.tools { margin-top: 40px; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 22px; }
 .tool { display: flex; flex-direction: column; background: var(--surface); border: 1px solid var(--line); border-radius: 14px; overflow: hidden; min-width: 0;
   border-top: 4px solid var(--c); }
-.tool[data-tool="rgen"] { --c: var(--marigold); } .tool[data-tool="qdata"] { --c: var(--cobalt); } .tool[data-tool="asql"] { --c: var(--ember); }
+.tool[data-tool="rgen"] { --c: var(--marigold); } .tool[data-tool="qdata"] { --c: var(--cobalt); } .tool[data-tool="asql"] { --c: var(--ember); } .tool[data-tool="dchart"] { --c: var(--teal); }
 .tool-media { display: block; background: var(--term-bg); aspect-ratio: 16 / 9; overflow: hidden; }
 .tool-media img { width: 100%; height: 100%; object-fit: cover; object-position: top; }
 .tool-body { padding: 22px; display: flex; flex-direction: column; gap: 12px; flex: 1; min-width: 0; }
@@ -59,7 +59,7 @@
 
 /* ---------- how they fit ---------- */
 .fit { background: var(--surface); border-block: 1px solid var(--line); }
-.flow { list-style: none; margin: 40px 0 0; padding: 0; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 22px; counter-reset: none; }
+.flow { list-style: none; margin: 40px 0 0; padding: 0; display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 22px; counter-reset: none; }
 .flow li { position: relative; padding: 24px 22px 22px; border-radius: 12px; background: var(--bg); border: 1px solid var(--line); }
 .flow li:not(:last-child)::after { content: "→"; position: absolute; right: -19px; top: 30px; font: 600 20px var(--mono); color: var(--muted); }
 .flow-n { display: inline-grid; place-items: center; width: 34px; height: 34px; border-radius: 50%; background: var(--c); color: #16182b;
@@ -67,7 +67,7 @@
 .flow h3 { margin-top: 16px; }
 .flow p { margin-top: 10px; color: var(--muted); font-size: 15px; }
 .flow b { color: var(--text); font-family: var(--mono); }
-@media (max-width: 860px) { .flow { grid-template-columns: minmax(0, 1fr); } .flow li:not(:last-child)::after { content: "↓"; right: auto; left: 32px; top: auto; bottom: -26px; } }
+@media (max-width: 980px) { .flow { grid-template-columns: minmax(0, 1fr); } .flow li:not(:last-child)::after { content: "↓"; right: auto; left: 32px; top: auto; bottom: -26px; } }
 
 /* ---------- shared ---------- */
 .shared { margin-top: 40px; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 32px 40px; }

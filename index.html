@@ -4,11 +4,11 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>cuiqanalytics — small, sharp tools for data work</title>
-<meta name="description" content="cuiqanalytics makes local-first command-line tools for data work: rgen generates realistic test data, qdata runs SQL pipelines, asql turns SQL into dashboards. Single binaries on an embedded DuckDB engine. No account, no telemetry.">
+<meta name="description" content="cuiqanalytics makes local-first command-line tools for data work: rgen generates realistic test data, qdata runs SQL pipelines, dchart turns a query into a publication-ready chart, asql turns SQL into dashboards. Single binaries on an embedded DuckDB engine. No account, no telemetry.">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://www.cuiqanalytics.com/">
 <meta property="og:title" content="cuiqanalytics — small, sharp tools for data work">
-<meta property="og:description" content="rgen makes the data, qdata runs the pipeline, asql builds the dashboard. Plain SQL, on your machine.">
+<meta property="og:description" content="rgen makes the data, qdata runs the pipeline, dchart charts it, asql builds the dashboard. Plain SQL, on your machine.">
 <link rel="canonical" href="https://www.cuiqanalytics.com/">
 <link rel="icon" href="brand/icon-cuiq.svg" type="image/svg+xml">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -55,7 +55,7 @@
   <section id="top" class="hero">
     <div>
       <h1>Small, sharp tools for data work.</h1>
-      <p class="lede">Three command-line tools that each do one job well. <b>rgen</b> makes realistic test data, <b>qdata</b> runs your SQL as a pipeline, and <b>asql</b> turns a query into a dashboard. Each one is a single binary on an embedded DuckDB engine: no server, no account, no telemetry.</p>
+      <p class="lede">Four local tools that each do one job well. <b>rgen</b> makes realistic test data, <b>qdata</b> runs your SQL as a pipeline, <b>dchart</b> turns a query into a publication-ready chart, and <b>asql</b> turns queries into a dashboard. Each one is a single binary on an embedded DuckDB engine: no server, no account, no telemetry.</p>
       <div class="hero-cta">
         <a href="#tools" class="btn btn-solid">See the tools</a>
         <a href="#fit" class="btn btn-outline">How they fit together</a>
@@ -85,7 +85,7 @@
 
   <section id="tools" class="wrap">
     <h2>The tools</h2>
-    <p class="section-lede">Use one, or chain all three. Each is free, with no row or pipeline limits.</p>
+    <p class="section-lede">Use one, or chain them together. Each is free, with no row or pipeline limits.</p>
     <div class="tools">
 
       <article class="tool" data-tool="rgen">
@@ -148,8 +148,24 @@ SELECT month AS date, channel AS series,
         </div>
       </article>
 
+      <article class="tool" data-tool="dchart">
+        <a class="tool-media" href="https://cuiqanalytics.github.io/dchart/" tabindex="-1" aria-hidden="true">
+          <img src="https://cuiqanalytics.github.io/dchart/media/app-stacked.png" alt="" loading="lazy" width="1500" height="1000">
+        </a>
+        <div class="tool-body">
+          <h3><img src="brand/icon-dchart.svg" alt="" width="30" height="30">dchart</h3>
+          <p class="tool-pitch">Query in. Publication-ready chart out.</p>
+          <p>A SQL editor and chart builder that runs in your browser, on your machine. Query CSV, Parquet and JSON files with DuckDB, pick one of 14 chart types, and get a chart styled for a report or a paper. Export PNG, SVG or an asql chart block. Works offline.</p>
+          <div class="cmd">
+            <code><span class="sigil" aria-hidden="true">$</span>curl -fsSL https://cuiqanalytics.github.io/dchart/install.sh | sh</code>
+            <button class="copy" type="button" data-copy="curl -fsSL https://cuiqanalytics.github.io/dchart/install.sh | sh">Copy</button>
+          </div>
+          <p class="tool-links"><a class="btn btn-outline" href="https://cuiqanalytics.github.io/dchart/">Visit dchart</a> <a href="https://github.com/cuiqanalytics/dchart-cli">GitHub</a></p>
+        </div>
+      </article>
+
     </div>
-    <p class="section-foot">Linux binaries, plus Docker images for macOS and Windows: <code>ghcr.io/cuiqanalytics/rgen</code>, <code>qdata</code> and <code>asql</code>.</p>
+    <p class="section-foot">Linux binaries, plus Docker images for macOS and Windows: <code>ghcr.io/cuiqanalytics/rgen</code>, <code>qdata</code> and <code>asql</code>. dchart is Linux-only for now; on Windows, run it in WSL.</p>
   </section>
 
   <section id="fit" class="fit">
@@ -167,8 +183,13 @@ SELECT month AS date, channel AS series,
           <h3>Shape it with SQL</h3>
           <p><b>qdata</b> runs a folder of numbered SQL files: ingest, validate, transform, export. Bring in files, databases or web pages and keep a log of every run.</p>
         </li>
-        <li style="--c: var(--ember)">
+        <li style="--c: var(--teal)">
           <span class="flow-n">3</span>
+          <h3>Find the chart</h3>
+          <p><b>dchart</b> opens the result in a local SQL editor. Explore it, pick one of 14 chart types and export a styled PNG or SVG, or an asql chart block for the report.</p>
+        </li>
+        <li style="--c: var(--ember)">
+          <span class="flow-n">4</span>
           <h3>Show the result</h3>
           <p><b>asql</b> turns the final queries into one HTML file: a dashboard for the team or a narrative report for the board. Email it, commit it or put it on any static host.</p>
         </li>
@@ -182,10 +203,14 @@ SELECT month AS date, channel AS series,
 <span class="p">$</span> <span class="t-qdata">qdata</span> run my_pipeline
 <span class="ok">✓</span> 4 steps, each logged and cached
 
+<span class="c"># explore it and design a chart in the browser</span>
+<span class="p">$</span> <span class="t-dchart">dchart</span> --db shop.duckdb
+<span class="ok">✓</span> http://localhost:4322
+
 <span class="c"># ship the result as one HTML dashboard</span>
 <span class="p">$</span> <span class="t-asql">asql</span> build report.sql
 <span class="ok">✓</span> report.html</code></pre>
-        <figcaption>The same flow in a terminal: three tools, plain SQL in between, everything on your machine.</figcaption>
+        <figcaption>The same flow in a terminal: four tools, plain SQL in between, everything on your machine.</figcaption>
       </figure>
     </div>
   </section>
@@ -196,7 +221,7 @@ SELECT month AS date, channel AS series,
       <div><h3>Plain SQL</h3><p>Your logic lives in SQL files you can read, review and diff. Nothing you write is locked into a proprietary format.</p></div>
       <div><h3>Local-first</h3><p>Everything runs on your laptop or your own server. Your data never leaves your machine, and the tools work offline.</p></div>
       <div><h3>One binary, DuckDB inside</h3><p>A single download with an embedded DuckDB engine. No Python environment, no database server, no scheduler to stand up.</p></div>
-      <div><h3>Ready for AI agents</h3><p>Each tool ships a Claude Code skill, so an agent writes correct configs, pipelines and reports, and you keep the readable files.</p></div>
+      <div><h3>Ready for AI agents</h3><p>rgen, qdata and asql each ship a Claude Code skill, so an agent writes correct configs, pipelines and reports, and you keep the readable files.</p></div>
       <div><h3>No account, no telemetry</h3><p>Install and run. Nothing phones home, and nothing needs a sign-up.</p></div>
       <div><h3>Free to use</h3><p>The tools are free with no row or pipeline limits. Optional paid add-ons fund the work.</p></div>
     </div>
@@ -212,6 +237,7 @@ SELECT month AS date, channel AS series,
           <tr><th scope="row"><a href="https://cuiqanalytics.github.io/rgen/#pricing">rgen</a></th><td>Every provider, any number of rows, relational configs, twins</td><td>Industry data packs: $79 a year for one, $199 a year for all</td></tr>
           <tr><th scope="row"><a href="https://cuiqanalytics.github.io/qdata/#pricing">qdata</a></th><td>Unlimited pipelines and steps, replay, connectors, HTML run reports</td><td>Pro: crawling, scheduler and REST API, $49 one-time with a year of updates</td></tr>
           <tr><th scope="row"><a href="https://www.asql.dev/">asql</a></th><td>Everything</td><td>—</td></tr>
+          <tr><th scope="row"><a href="https://cuiqanalytics.github.io/dchart/">dchart</a></th><td>Everything</td><td>—</td></tr>
         </tbody>
       </table>
     </div>
